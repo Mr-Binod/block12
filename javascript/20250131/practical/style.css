@@ -1,0 +1,146 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+}
+body {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.wrap{
+    width: 100%; 
+    height: 100%;
+   
+    margin: 0 auto;
+    
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap .content-header {
+    width: 350px;
+    height: 40px;
+    display: flex;
+}
+.wrap .content-header li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    box-sizing: border-box;
+}
+
+.wrap .content-header li:nth-child(1) {
+    width: 10%;
+}
+
+.wrap .content-header li:nth-child(2) {
+    width: 20%;
+}
+
+.wrap .content-header li:nth-child(3) {
+    width: 40%;
+}
+
+.wrap .content-header li:nth-child(4) {
+    width: 30%;
+}
+
+.content ul {
+    width: 350px;
+    height: max-content;
+    display: flex;
+    
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.content ul li {
+    border: 1px solid;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+.content ul li:nth-child(1) {
+    width: 100%;
+   border-bottom: 0;
+}
+
+.content ul li:nth-child(2) {
+    width: 100%;
+    border-top: 0;
+    
+}
+
+.content ul li:nth-child(3) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.content ul li:nth-child(4) {
+    width: 100%;
+    display: inline-block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+.file {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+}
+#content_form {
+    width: 350px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid;
+    box-sizing: border-box;
+}
+#content_form textarea {
+    width: 70%;
+    height: 50px;
+}
+.Edit-btn {
+    
+    width: 50px;
+    float: right;
+}
+
+.Delete-btn {
+    width: 50px;
+    float: right;
+}
+#UpdateForm {
+    width: 350px;
+    height: 350px;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between ;
+    align-items: center;
+}
+
+
+.save-btn {
+    width: 50%;
+    padding: 5px;
+}

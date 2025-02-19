@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="counter">0</div>
+
+    <button id="increment">increment</button>
+    <button id="decrement">decrement</button>
+</body>
+<script>
+    const display = document.querySelector("#counter");
+const incrementBtn = document.querySelector("#increment");
+const decrementBtn = document.querySelect("#decrement");
+
+let num = 0;
+
+const increment = () => {
+    num += 1;
+    render();
+}
+
+const decrement = () => {
+    if(num > 0)  // 중괄호 럾으면 유효범위다 바로 밑에줄만 실행 된다
+        num -= 1;
+        render();
+}
+// increment // id can be directly called
+increment.Btn.onclick = increment
+decrement.Btn.onclick = decrement
+
+const render = () => {
+    display.innerHTML = num;
+}
+
+console.log(new Date(1000));  
+// 컴퓨팅 시스템에서 시간을 추적하는 시스템 유닉스 시간의 시점에서 부터
+// 1000 밀리세컨드 시간이 증가된 값
+// 메서드에 get 값을 가져오겠다 조회하곘다
+
+console.log(new Date().getFullYear());
+console.log(new Date().getMonth() + 1);  //  0 ~ 1  index  present month is 0 index
+console.log(new Date().getDate()); // 일수는 그대로 1 ~ index
+console.log(new Date().getDay()); // 일요일부터 0 ~ 6 index
+</script>
+</html>

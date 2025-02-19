@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+            margin: auto;
+        }
+        .login-form label {
+            margin: 10px 0;
+        }
+        .login-form button {
+            margin-top: 20px;
+        }
+        .user-info {
+            width: 350px;
+            height: 300px;
+            margin: 20px auto 0 auto;
+            border: 1px solid;
+            position: relative;
+        }
+        .user-info img {
+            width: 150px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <form class="login-form">
+        <label for="">아이디</label>
+        <input type="text" name="uid">
+        <label for="">비밀번호</label>
+        <input type="text" name="upw">
+        <button>로그인</button>
+    </form>
+    <div class="user-info">
+       
+    </div>
+</body>
+<script>
+    const data = {
+        nickname : "moon",
+        uid : "admin",
+        password : "admin123"
+    }
+
+    const login = (uid, upw) => {
+        // loading gif 대용량이 아닌 경우 진행도를 표현할 필요가 없습니다
+        const img = document.createElement("img");
+        img.src = `./images/loading.gif`
+        document.querySelector(".user-info").innerHTML = "";
+        const user_info = document.querySelector(".user-info");
+        user_info.append(img);
+        // disabled
+        // input의 입력 막아는 속성
+
+
+        //  이후에 setTimeout은 콜스텍에 있는 내용을 모구 처리하고 초출하기떄문에 원하는 시점이 정확하지 않다.
+        // 스버에서 클라이언트에 로그인 겸중을 알려주는 시간이 1초 걸린다.
+        // setTimeoyt 사용해서 1 포 귀에 내용을 검사
+        // 데이터를 응답 받는까지 기다리고 코드를 진행 시켜야 한다.
+
+        // (settime login logic 아니다 실행 컨텍스트를 확인하려고 사용했다)
+        setTimeout(() => {
+            loginCheck(uid, upw);
+        }, 1000)
+        
+        const inputs =document.querySelectorAll(".login-form input");
+        inputs.forEach((e) => {
+            e.disabled = true;
+        })
+    }
+    const loginCheck = (uid, upw) => {
+        document.querySelector(".user-info").innerHTML = "";
+        const nickName = document.createElement("div");
+        if((uid === data.uid) && (data.password === upw)) {
+            console.log("login 성공");
+            nickName.innerHTML = `유저 닉네임 : ${data.uid}`
+        }
+        else {
+            console.log("login 실패");
+            nickName.innerHTML = "아이디나 비밀번호가 일치하지 않습니다";
+
+        }
+        const inputs =document.querySelectorAll(".login-form input");
+        inputs.forEach((e) => {
+            e.disabled = true;
+        })
+        document.querySelector(".user-info").append(nickName);
+    }
+    document.querySelector(".login-form").onsubmit = (e) => {
+        e.preventDefault();
+        const {uid, upw} = e.target;
+        login(uid.value, upw.value);
+        // 로그인 시도
+    }
+
+    // setInterval : 1초마다 프로그렘이 계속 실행시킨다.
+    const setin = setInterval(() => {
+        console.log("안녕");
+    }, 1000)
+    
+    clearInterval(setin); //for stoping
+    
+</script>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box-01::after {
+            display: block;
+            content: "";
+        }
+
+        .box-01::before {
+            display: block;
+            content: "";        
+        }
+
+        .box-01 {
+            width: 80px;
+            height: 80px;
+            border: 1px solid;
+            position: relative;
+            cursor: pointer;
+            
+            
+        }
+        .box-01:hover {
+            background-color: bisque;
+        }
+        /* 열어개의 선택자로 스타일 작용 */
+        .box-01::before, .box-01::after {
+            width: 100%;
+            height: 6px;
+            background-color: black;
+            position: absolute;
+            transition: 1s;
+        }
+
+        .line {
+            width: 100%;
+            height: 6px;
+            display: block;
+            background-color: black;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: 1s; /*1초의 시간종안 px단위의 수치가 변경됬을떄 1초 만큼 자연스럽게 움지긴다 */ 
+        }
+        .box-01::after {    
+            bottom: 10px;
+        }
+        .box-01::before {
+            top: 10px;
+        }
+        /* .box-03 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: relative;
+            bottom: -50 px;
+        }
+        .box-04 {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            position: absolute;
+
+        } */
+
+      
+        .active.box-01>.line {
+            display: none;
+        }
+
+        .active::before {
+            transform: translateY(-50%) rotate(-45deg);
+            top: 50%;
+            
+        }
+        .active::after {
+            transform: translateY(50%) rotate(45deg);
+            bottom: 50%;
+
+        }
+
+        .box-02 {
+            width: 100px;
+            height: 100px;
+            background-color: chocolate;
+        }
+
+        .box-02:hover {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="cross_btn">
+    <label for="cross_btn">
+        <div class="box-01">
+            <span class="line"></span>
+        </div>
+    </label>
+    <!-- <div class="box-02">hover</div> -->
+
+    <!-- <div class="box-03"></div>
+    <div class="box-04"></div> -->
+</body>
+</html>

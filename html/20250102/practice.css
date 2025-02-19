@@ -1,0 +1,32 @@
+.name {
+    display: inline-block;
+    width: 1250px;
+    height: 150px;
+    border: 1px solid;
+}
+
+.name1.name h3 {
+    height: 100%;
+    width: 20%;
+    display: inline-block;
+    border: 1px solid;
+    margin: 0;
+    float: left;
+}
+
+.namespace1 {
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+    border: 1px solid;
+    margin: 0;
+    float: left;
+}
+.idname {
+    margin: 0;
+    width: 29.5%;
+    height: 50%;
+    display: inline-block;
+    float: left;
+    border: 1px solid;
+}

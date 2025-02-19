@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+<body>
+    
+</body>
+<script>
+    // promise return functin async
+    const getWeather = async(cityName) => {
+        // 내부의 기능을 종기적으로 호출을 해야한다
+        // 데이터를 가져오는 기산이 걸리기떄문에 참시 데이터를 정상적으로 응답 바등ㄹ떄까지 대기
+        // 데이터를 가져와서 렌더링하는 로직
+        const apiKey = "49d475d5d2845f551fbd3f068644737b";
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`
+        const res = await fetch(url); // 데이터를 정상적으로 가져올때까지
+        // JSON 문자열 파싱이 안된상태
+        const data = await res.json();
+        console.log(data) // 데이터를 사용하는 부분이면
+    }
+    getWeather("seoul");
+    // setTimeout 은 macro task 입니다
+    // Promise 은 micro task 입니다
+</script>
+</html>
+

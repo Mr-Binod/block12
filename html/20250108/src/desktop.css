@@ -1,0 +1,182 @@
+/* 대스크톱 사이즈 이상으로 넘어가면 */
+
+
+
+@media only screen and (min-width : 1200px){
+    /* wrap 아이디로 페이지의 전체의 영역을 */
+    #wrap {
+       
+        max-width: 1912px;
+        
+        /*  vw, vh
+        vw : 현재 브라우저의 너비 100vw응 100% 비율로 보면 된다.
+        vh : 브라우저의 높이 100vh 또한 100% 의 비율
+        너비, 높이 등을 퍼센트로 주면 자식태그는 부모 태그의 너비나 높이 만큼 만 크기가 지정될수 있는데
+
+        */
+        min-height: 100vh;  /*최소 높이 내용의 높이가 커지면 커지고 내용물이 없어도 기본 최소 높이가 저의한다*/
+        margin: 0 auto;
+        
+
+    }
+    ul, li {
+        list-style: none;
+    }
+
+    .tnb {
+        background-color: #efefef;
+        height: 35px;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+      
+    }
+    
+    .tnb ul {
+        width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 10px;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .tnb ul, .tnb li {
+        list-style: none;
+    }
+
+    .tnb .tnb_community {
+        display: flex;
+        
+        align-items: center;
+        font-size: 11px;
+        background-color: rgb(245, 244, 244);
+        padding: 0 14px;
+        border: 1px solid;
+        border-bottom: 0;
+        position: relative;
+        top: 1px;
+    }
+    .tnb .tnb_community::before {
+        content: "";
+        background-image: url(./th.jpg);
+        background-size: cover;
+        display: block;
+        margin-right: 4px;
+        width: 14px;
+        height: 15px;
+    }
+
+    .tnb .tnb_login img {
+        width: 9px;
+        margin-right: 6px;
+    }
+
+    .tnb .tnb_signup img {
+        width: 12px;
+        margin-right: 6px;
+    }
+
+    .tnb .tnb_community+li {
+        display: flex;
+    }
+    .tnb .tnb_login,
+    .tnb .tnb_signup {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        font-size: 11px;
+        padding: 0 10px;
+    }
+    .tnb_login {
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+    }
+
+    .ct_wrapper {
+        width: 1200px;
+        margin: 0 auto;
+        min-height: calc(100vh - 36px);
+        background-color: antiquewhite;
+    }
+
+    .hd_wrapper {
+        width: 100%;
+        height: 90px;
+        background-color: aquamarine;
+    }
+
+    .gnb_1dul {
+        width: 100%;
+        height: 46px;
+        background-color: brown;
+    }
+
+    .container_wr {
+        width: 1200px;
+        min-height: calc(100vh - 212px);
+        background-color: chocolate;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container {
+        width: 870px;
+        
+        background-color: bisque;
+    }
+   
+    .container .google-center-div {
+        width: 100%;
+        height: 90px;
+        background-color: rgb(102, 212, 212);
+        margin-bottom: 15px;
+    }
+    .container_title {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 10px;
+        background-color: blueviolet;
+    }
+    .btn_top {
+        width: 100%;
+        height: 32px;
+        margin-bottom: 20px;
+        background-color: black;
+    }
+    .gnb_web {
+        width: 100%;
+        height: 45px;
+        margin-bottom: 22px;
+        background-color: cadetblue;
+    }
+    .web {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        left: -10px;
+        /* justify-content: space-between; */
+    }
+    .container .web .content-item {
+        width: 200px;
+        height: 200px;
+        margin: 0 10px;
+        
+        margin-bottom: 30px;
+        background-color: darkgreen;
+        
+    }
+    /* 4n n은 4 의 배수 4 8 12  */
+    .container .content-item:nth-child(4n) {
+        margin-right: 0;
+    }
+    
+    .aside {
+        width: 300px;
+        
+        background-color: cyan;
+    }
+ 
+}
+

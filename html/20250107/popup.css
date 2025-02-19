@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#layer_btn {
+    display: none;
+}
+
+
+#layer {
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    position: absolute;
+}
+#layer_btn:checked ~ #layer {
+    display: flex;
+}
+
+#layer .content {
+    width: 300px;
+    height: 380px;
+    border: 1px solid rgb(214, 211, 211);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.content form span {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    
+}
+
+.layer_header {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.content > .layer_input {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.layer_input span input {
+    padding: 5px;
+    width: 200px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(165, 162, 162);
+    border-radius: 2.8%;
+    box-sizing: border-box;
+    margin-top: 5px;
+    
+}
+
+.layer_header span label {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.layer_header span label::after,
+.layer_header span label::before {
+    content: "";
+    height: 2px;
+    width: 22px;
+    display: block;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 70px;
+    
+    transform: translateY(-50%) rotate(45deg);
+}
+.layer_header span label::before {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.content button {
+    width: 200px;
+    padding: 5px;
+    margin: 50px 0 50px 0;
+    
+    border: 0;
+    border-radius: 3%;
+    background-color: rgb(92, 190, 255);
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    
+}
+
+.content > span {
+    margin-top: 25px;
+    font-size: 12px;
+    font-weight: 700;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: rgb(42, 167, 250);
+    font-weight: bolder;
+}
+
+/* ------------------회원가입 페이지---------------- */
+.layer1 {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+   
+}
+
+#layer_btn1 {
+    display: none;
+} 
+.line span:nth-child(1) {
+    width: 70px;
+    height: 1px;
+    background-color: rgb(161, 161, 161);
+}
+.line span:nth-child(3) {
+    width: 70px;
+    height: 1px;
+    background-color: rgb(161, 161, 161);
+}
+ 
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+#popbody {
+    height: 100vh;
+}
+#layer1 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+}
+.content1 {
+    width: 300px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    border: 1px solid rgb(214, 211, 211);
+    
+}
+
+.layer_header1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.layer_header1 span {
+    margin-top: 10px;
+ }
+.content1 form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.layer_input1 span {
+    margin: 3px 0;
+}
+.layer_input1 span input {
+    width: 100%;
+    margin-top: 10px;
+    padding: 3.5px;
+    box-sizing: border-box;
+}
+
+.content1 button{
+    margin: 10px 0;
+    padding: 3.5px;
+    background-color:  rgb(92, 190, 255);
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    border-radius: 1px ;
+    border: 1px black;
+    
+}
+
+
+.content1 span {
+    font-size: 12px;
+}
+
+.p1 {
+    margin: 20px 0 0 0;
+}
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box box1 box2">
+        <div id="temp"></div>
+    </div>
+    <div class="box"></div>
+    <input class="content" type="text" placeholder="아이디를 입력하세요" >
+</body>
+<script>
+    // const element = document.getElementById(".box");
+    // const element1 = document.querySelector(".box");
+    const element2 = document.querySelectorAll(".box");
+    // node arr {box box1 box2, box}
+
+    // element2[2].style.color = "blue";
+    // element.style.backgroundColor = "grey"; 
+    // css 에 있는 - 뺴고 대문자로 
+    element2[2].innerText = "<div>안녕</div>"
+    element2[2].innerText = "<div>안녕</div>"
+    element2[2].innerText += "<div>안녕</div>"
+
+    console.log(element);
+    console.dir(element1);
+
+    const content = document.querySelector(".content");
+    console.log(content);
+    console.log(content.value);
+    // 함수를 호출 함수를 호출할 시기는 버튼을 누르는 행위
+    // 비동기 함수    // 콜백
+
+    // setTimeout 시간이후에 코드를 실핼시킨다
+    setTimeout(() => {
+        console.log(content)
+    }, timeout (5000)); // timeout value in milisec
+
+    // 콜백함수는 단순하게 함수는 값이고 사용목적만 이해하면 편하가
+    // 콜백 함수는 기능을 잠시 대기 내가 사용하고 싶을때 호출하기 위해서
+    // 기능을 잠시 대기시키소 싶다
+    const sum = (a, b) => a + b;
+    const Foo = (d, e, f) => {
+        const c = 10;
+        return c + d(e, f)
+;    }
+
+    Foo(sum, 20, 30);
+
+    const result = Foo(sum, 20, 30);
+</script>
+</html>

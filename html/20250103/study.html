@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       ul ,li{
+        list-style: none;
+       } 
+       ul {
+        display: flex;
+        margin: 0;
+       }
+
+       ul > li {
+        border: 1px solid;
+        border-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+
+       ul:nth-child(1) li {
+        background-color: rgb(253, 217, 56);
+       }
+
+       ul li:nth-child(1) {
+        width: 120px;
+       }
+       ul li:nth-child(2) {
+        width: 70px;
+       }
+       ul li:nth-child(3) {
+        width: 250px;
+       }
+       ul li:nth-child(4) {
+        width: 120px;
+       }
+       ul li:nth-child(5) {
+        width: 160px;
+       }
+
+       .table {
+         display: flex;
+         flex-direction: column;
+       }
+
+       .table ul:last-child li {
+         border-bottom: 1px solid;
+       }
+ 
+       .table ul:nth-child(2) li {
+         height: 200px;
+       }
+
+       .table ul:nth-child(2) li:nth-child(2){
+           display: flex;
+           flex-direction: column;
+       }
+
+       .table ul:nth-child(2) li:nth-child(2) div{
+         width: 100%;
+         height: 100px;
+         border-bottom: 1px solid;
+       }
+       .sec1 {
+        display: flex;
+        flex-direction: column;
+       }
+       .sec1 div {
+        width: 100%;
+        height: 20px;
+        border-bottom: 1px solid;
+       }
+       .sec2 {
+        
+       }
+
+    </style>
+</head>
+<body>
+    <div class="table">
+        <ul>
+            <li>교과</li>
+            <li>년도</li>
+            <li>교육과정</li>
+            <li>시간</li>
+            <li>수강료</li>
+        </ul>
+        <ul>
+            <li>한식 자격증</li>
+            <li>
+                <div></div>
+                <div></div>
+            </li>
+            <li class="sec1">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </li>
+            <li class="sec2">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </li>
+            <li>수강료</li>
+        </ul>
+        <ul>
+            <li>교과</li>
+            <li>년도</li>
+            <li>교육과정</li>
+            <li>시간</li>
+            <li>수강료</li>
+        </ul>
+        <ul>
+            <li>교과</li>
+            <li>년도</li>
+            <li>교육과정</li>
+            <li>시간</li>
+            <li>수강료</li>
+        </ul>
+        <ul>
+            <li>교과</li>
+            <li>년도</li>
+            <li>교육과정</li>
+            <li>시간</li>
+            <li>수강료</li>
+        </ul>
+    </div>
+
+</body>
+</html>

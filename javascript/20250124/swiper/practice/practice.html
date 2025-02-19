@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul li {
+            list-style: none;
+        }
+        .wrap {
+            width: 350px;
+            position: relative;
+            margin: 0 auto;
+        }
+        .swiper {
+            width: 350px;
+            height: 350px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .swiper-ul {
+            width: max-content;
+            height: 100%;
+            display: flex;
+            position: absolute;
+            transition: 1s;
+            top: 0;
+            left: -350px;
+        }
+        li {
+            width: 350px;
+            height: 350px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        span:nth-child(3) {
+            right: 0;
+            position: absolute;
+            top: 50%;
+        }
+        span:nth-child(2) {
+            top: 50%;
+            position: absolute;
+        }
+     
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="swiper">
+            <ul class="swiper-ul">
+
+                
+                <li class="swiper-item">4</li>
+                <li class="swiper-item">1</li>
+                <li class="swiper-item">2</li>
+                <li class="swiper-item">3</li>
+                <li class="swiper-item">4</li>
+                <li class="swiper-item">1</li>
+            </ul>
+        </div>
+        <span>이전</span>
+        <span>다음</span>
+    </div>
+</body>
+<script src="practice.js">
+
+</script>
+</html>

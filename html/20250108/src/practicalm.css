@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#wrap0 {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#gnb {
+    
+    display: flex;
+    height: 80px;
+    background-color: rgb(242, 244, 247);
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(212, 226, 231);
+    
+}
+
+#gnb .logo{
+    line-height: 32px;
+    color: rgb(33, 33, 110);
+    cursor: pointer;
+}
+
+.wrap1 .title {
+    display: flex;
+    flex-direction: row;
+}
+.wrap1 .title li {
+    list-style: none;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.log ul {
+    display: flex;
+
+}
+.log ul li {
+    list-style: none;
+    margin-left: 15px;
+    
+}
+.log1 > li > a {
+    text-decoration: none;
+    
+}
+
+.qrbutton {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background-color: aliceblue;
+
+}
+
+.qrbutton span {
+    width: 50%;
+    height: 50%;
+    border: 1px solid;
+    position: absolute;
+    box-sizing: border-box;
+    
+    
+}
+.qrbutton span:nth-child(2) {
+    left: 50%;
+    
+}
+.qrbutton span:nth-child(3) {
+    top: initial;
+    top: 50%;
+}
+.qrbutton span:nth-child(4) {
+    top: 50%;
+    left: 50%;
+}
+
+.button {
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    border: 1px solid;
+    margin-left: 8px;
+    background-color: black;
+    
+}
+
+.button span {
+
+    height:5px ;
+    position: absolute;
+    width: 35px;
+    background-color: rgb(242, 244, 247);
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.button span:nth-child(2) {
+    top: 23%;
+
+}
+.button span:nth-child(3) {
+    top: initial;
+    top: 78%;
+}
+#wrap0 > .img1 .img1-1 {
+    height: max-content;
+    width: 100%;
+    box-shadow: 10px 10px 10px -10px;
+    position: relative;
+}
+
+.img1 .img1-1 img {
+    width: 100%;
+    
+    
+}
+.img1-content {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 50px;
+    background-color: rgb(51, 45, 45);
+    height: 80px;
+    
+}
+.img1-content h3 {
+    display: flex;
+    justify-content: center;
+    color: rgb(209, 223, 223);
+    align-items: center;
+    word-break: keep-all;
+}
+.img1-1 h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+.img1-content h5 {
+    display: flex;
+    justify-content: center;
+    color: rgb(209, 223, 223);
+    align-items: center;
+}
+.footer1 {
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+.footer1 .footer1-1 {
+    display: flex;
+    flex-direction: column;
+    margin: 0 35px;
+}
+.footer1 .footer1-1 span {
+    margin: 2px;
+}
+.footer1-1 span a {
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+}
+.footer1-1 span a:hover {
+    text-decoration: underline;
+}
+
+.footer1 .footer1-2 {
+    display: flex;
+    flex-direction: column;
+    margin: 0 35px;
+}
+.footer1 .footer1-2 span {
+    margin: 2px;
+}
+.footer1-2 span a {
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+}
+.footer1-2 span a:hover {
+    text-decoration: underline;
+}
+
+.footer1 .footer1-3 {
+    display: flex;
+    flex-direction: column;
+}
+.footer1 .footer1-3 span {
+    margin: 2px;
+}
+.footer1-3 span a {
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+}
+.footer1-3 span a:hover {
+    text-decoration: underline;
+}
+
+
+@media only screen and (min-width : 768px) {
+    #wrap0 {
+        width: 100%;
+        min-height: 100vh;
+        background-color: grey;
+    }
+}

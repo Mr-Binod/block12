@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box {
+            width: 180px;
+            height: 180px;
+            background-color: bisque;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      
+    </div>
+</body>
+<script>
+    const game = document.querySelector("#container");
+    const num = document.querySelectorAll(".box");
+    // 시도한 횟수 processing count
+    let count = [];
+    let max = 4;
+    let min = 0;
+    let boxlist = [];
+    let ans = [];
+
+    for (let i = 0; i < num.length; i++) {
+        num[i].onclick = (e) => {
+            e.target.style.backgroundColor = "blue";
+            if(max >= 0) {
+                max = max - 1;
+                ans.push(i)
+                console.log(count);
+                console.log(ans)
+            }
+            else {
+                ans.sort((a,b) => a-b);
+                count.sort((a,b) => a-b);
+                const a = ans.join("");
+                const b = count.join("");
+                console.log(a)
+                console.log(b)
+                if (a == b) {
+                    alert("YOU WIN");
+                }
+                else{
+                    alert("YOU LOSE");
+                }
+            }
+            
+        }
+    
+    }
+//    game.onclick = function(a) {
+//         console.log(num[a]);
+//         if(a.target.classList.contains("box")) {
+//             a.target.style.backgroundColor = "blue";
+//             const countClick = a.target.index
+//             console.dir(a.target)
+//             console.log(countClick)
+            
+//         } 
+//     }
+ 
+    for (let i = 1; i <= num.length; i++) {
+        boxlist.push(i);
+       
+    }
+
+    console.log(boxlist)
+    for (let i = 0; i < 5; i++) {
+        let comSelect = parseInt(Math.random() * boxlist.length);
+
+        count.push(boxlist[comSelect]);
+        boxlist.splice(comSelect, 1);
+        num[count[i]].style.backgroundColor = 'red';
+        setTimeout(() => {
+        num[count[i]].style.backgroundColor = 'bisque';
+        }, 1000);
+        
+    }
+    // if(ans.length == count.length && ans == count) {
+    //     alert("you win")
+    // }
+    console.log(num.length);
+    console.log(boxlist);
+</script>
+</html>

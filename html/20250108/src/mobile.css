@@ -1,0 +1,197 @@
+/* 모바일 기준 기본 스타일 */
+/* 모바일 사이즈일때 */
+
+/* 스타일시트 작성할때 tip */
+/* 최소 4 뎁스 까지 사용하는게 좋가 가독성이 이슈 */  /* while calling id or class call upto 3 */
+
+/* -------------------title----------------------- */
+* {
+    margin: 0;
+    padding: 0;
+}
+#wrap {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(245, 244, 244);
+}
+
+/* ------------------
+gnb 
+----------------------- */
+#wrap .gnb {
+    height: 60px;
+    background-color: #444;
+    display: flex; /* 태그의 내용을 나열할때 정열을 저의할ㄸ때 사용한다. 요소의 display 와 상관 없이 요소의 정렬의 정의한다. */
+    /* flex를 사용할깨 사용할수 있는 속성 */
+    /* align-items : 상하 의 정렬을 관리할때 row 기준 column 기준은 촤우가 바꿘다*/
+
+    /* jsutify-content : 촤우의 정렬을 관리할때 row 기준 column 기준이로 상하가 마준다 */
+    
+    align-items: center;
+    justify-content: space-between;
+}
+
+#wrap .gnb .gnb-button{
+    width: 60px;
+    height: 60px;
+    display: block;
+    position: relative; /* 본인의 위치를 기준으로 위치를 정의한다 */
+    background-color: #444;
+    cursor: pointer;  /* 마우스를 요소의 위로 올렸을때 손가락 모양을 변경 */
+}
+
+#wrap .gnb .user-icon {
+    width: 60px;
+    height: 60px;
+    border: 1px solid;
+    position: relative;
+}
+.gnb .user-icon span:nth-child(1) {
+    display: block;
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid white;
+    border-radius: 50%;
+}
+.gnb .user-icon span:nth-child(2) {
+    display: block;
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid white;
+    border-radius: 4px 4px 0 0 ; /* border-radius left, top, right, dowun*/ /* 4방면을 작용하는 스타일글은 뛰어쓰기로 구분해서 정의할수 릮다 */ 
+  
+}
+
+#wrap .logo {
+    color: white;
+    line-height: 32px;  /* text 의 높이를 정의 dont-size에 맞게 지정해서 스타일 작업을 하는 것이 일반적 */
+}
+
+#wrap .gnb-button span {
+    width: 20px;  /* if width height and border-radius are same the span will be round 5px, 5px, 5px */
+    height: 4px;
+    display: inline-block;
+    position: absolute; /* 부모의 요소중에 relative를 가지고 있는 요소를 기준으로 */
+    background-color: aliceblue;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* (x,y) direction 본인 요소 기준으로 x 축과 y cnrdmf 본인의 키기의 반지름 만큼 이동*/
+    border-radius: 1px;  /* 테도리를 깎을지 테두리를 동글게 적용할때 */
+    
+}
+
+
+/*  nth-child() 선택자 : 자식의 순서를 솰호안에 작성해서 자긱을 선택할수 있다
+1 부터 자식의 순서
+
+top 속성을 줬는데 bottomdmf 주먼 bottom 속성을 정의 괴지 않는다.
+left, right 속성도 마찬가지
+*/
+#wrap .gnb-button span:nth-child(2) {
+    top: 23px;
+}
+#wrap .gnb-button span:nth-child(3) {
+    top: initial;
+    bottom: 20px;
+}
+
+/* -------------------notification----------------------- */
+#wrap > .notification {
+    width: calc(100% - 20px); /* calc은 css의 값을 계산해거 값을 반환해준다 */
+    height: 10.163vw;
+    display: flex;
+    align-items: center;
+    padding: 0 2.033vw; /* (top bottom, left right)*/
+    border-bottom: 0.285vw solid #333;
+    font-size: 2.846vw;
+}
+
+#wrap > .notification > i {
+    border: 4px solid rgb(18, 18, 207);
+    border-radius: 50%;
+    margin-right: 2.033vw;
+}
+/* -------------------title----------------------- */
+
+#wrap > .title  {
+    padding: 0 2.033vw;
+    width: calc(100% - 4.065vw);
+    height: 13.211vw;
+    border-bottom: 1.4px solid #333;
+    font-size: 4.065vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+/* -------------------content----------------------- */
+#wrap > .content ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 50px);
+    height: 9.146vw;
+    padding: 0 5.081vw;
+    border-bottom: 1.4px solid #333;
+    box-shadow: 0 2px 9px -4px; 
+}
+
+.content ul li {
+    font-weight: bold;
+    margin-right: 4.065vw;
+    font-size: 4.065vw;
+}
+
+/* -------------------card-wrap----------------------- */
+#wrap > .card-wrap {
+    background-color: #ddd8d8;
+    padding: 20px 10px;
+    min-height: calc(100vh - 263px);
+}
+
+#wrap > .card-wrap .card {
+    width: 100%;
+    height: max-content; /* 부모 요소가 자식 요소의 내용의 크기만큼을 본인의 크기로 작성*/
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.card-wrap > .card > img {
+    width: 100%;
+}
+
+.card > .card-content > h3 {
+    padding: 2.846vw 2.033vw;
+    font-size: 4.065vw;
+    font-weight: bold;
+    border-bottom: 1px solid;
+}
+.card > .card-content > .views {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.846vw 2.033vw;
+}
+
+
+
+
+/* mobile 사이즈 이사으로 넘어가면 */
+@media only screen  and (min-width : 768px){
+    #wrap{
+        width: 100%;
+        min-height: 100vh;
+        
+    }
+
+    .mobile {
+    
+        display: none !important; /* css 우선순의 가장 강력한 우선순위
+         incase of overlapping id with class id is stronger than class */
+    }
+    
+}
+

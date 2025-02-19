@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    여기는 두번쨰 페이지 index2.html
+    <div>
+        <span id="searchValue"></span>
+        
+    </div>
+</body>
+<script>
+    console.log(window.location);
+    const str = window.location.search.replace("?","");
+    console.log(str); //?name=soon
+    // ?name=soon&age=20
+    // console.log(str.split("="))
+    // console.log(str.split("=")[0]) //key
+    // console.log(str.split("=")[1]) //value
+
+    // ["name=soon", "age=20"]
+    const arr = str.split("&");
+    // map 배열 메서드 반환한 값을 내보내서 매결의 형태를 반환한다.
+    const arr2 = arr.map((e) => {return e});
+    // ['name=soon', 'age=20']
+
+    const arr3 = arr.map((e) => {return e.split("=")});
+
+    // [[name,soon], [age,20]]
+    console.log(arr2);
+    console.log(arr[0][0]) //첫번쩨 데이터의 key
+    console.log(arr2[0][1]) //첫번째 데이터의 value
+
+    // 첫번쨰 값의 키와 value가 필요하다
+    // const{a} = value; 객체의 value 전달할떄
+    // const {a, b} = value === {a : 1, b : 2}
+
+    // 배열의 구조분해할당은 배열에 있는 요소의 순서대로
+    const [key, value] = arr3[0]; //[name, soon] 배열의 구조분해할당
+    console.log(key, value);
+           
+
+    // 검색할때 사용
+    const data = [{name : "soon", age : 20}, {name : "kim", age : 10}, {name : "juu", age : 0}]
+
+    // 검색한 글을 보여준다
+    //  배열 메서드 사용
+    const arr4 = arr.map((e) => {return e.split("=")});
+    // array.prototyme.mymap = ()
+
+    const map = (fn, _arr) => {
+        const arrResult = [];
+        for (let i = 0; i < _arr.length; i++) {
+            const item = fn(_arr[i]);    
+            arrResult.push(item);
+        }
+        return arrResult;
+    }
+    const arr5 = map((e) => {return e.split("=")}, arr);
+    console.log(arr5)
+
+    const searchResult = data.map((e) => {
+        if(e.name === "soon")
+        return e; 
+    })
+    console.log(searchResult)
+
+    // 검색할때 가장 많이 사용되는 메서드중에 하나
+    // 배열을 순회하면서 원하는 요소르 내보내서 배열을 반하환해주는 메서드
+    // bool 값을 콜백함수가 반환하고 true or false 값을 판단해서 요쇼를 배열에 포함할지 결정
+    // 연산자의 반환 값과 타입
+    // === 비교연산자 bool 타입 반환한다 . true or false return
+    // soon이라는 값을 검색했을떄
+    const searchResult2 = data.filter((e) => {
+        console.log(e.name === value)
+        console.log(value)
+        return e.name === value
+    })
+    // filter 반환하는 타입이 배열 여러개의 값을 반환할수도 있다
+    console.log(searchResult2);
+    const [result] = searchResult2
+    // result 반환된 내용이 없으면 즉 검색 결과가 없어서 객체가 할당되지 않으면
+    
+    // 옵션 체이닝 문법
+    // 참조타입의 값을 유무를 먼저 확인하고 값을 호출한다. 코드의 오휴를 방지한다
+    // 참조타입?.key
+    // 키가 없으면 키 이전의 참조타입
+    // templete literal $
+    searchValue.innerHTML = `이름은 결과는 이 사용자 입니다 ${result?.name} : 나이 ${result?.age}`
+
+</script>
+</html>

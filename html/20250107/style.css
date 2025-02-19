@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+#layer_btn {
+    display: none;
+}
+
+#layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#layer_btn:checked ~ #layer {
+    display: flex;
+}
+
+#layer > .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 300px;
+    box-shadow: 0 0;
+    background-color: #fff;
+}
+
+#layer > .content > .layer_header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid;
+}
+
+.layer_header span label {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.layer_header > span label::after,
+.layer_header > span label::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 4px;
+    background-color: black;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+} 
+.layer_header > span label::before {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.login_form form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.login_form form input[name="uid"],
+.login_form form input[name="upw"] {
+    width: 100%;
+    padding: 3px 6px;
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+
+.login_form form SPAN{
+    margin-top: 14px;
+    font-family: "Rubik", serif;
+    font-optical-sizing: auto;
+    font-weight: 450;
+    font-style: normal;
+}
+.login_form form input[name="upw"]{ 
+    margin-bottom: 16px;
+}
+
+
+@font-face {
+    font-family:"name" ;
+    src: url(./) format(woff2);
+}
+
+/* .playwrite-au-sa-<uniquifier> {
+    font-family: "Playwrite AU SA", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  } */

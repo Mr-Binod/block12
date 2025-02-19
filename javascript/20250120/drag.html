@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid rgb(204, 163, 163);
+            box-sizing: border-box;
+        }
+        #item {
+            width: 100%;
+            height: 100%;
+            /* background-color: bisque; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <!-- drag 속성 허용하는 속성 -->
+            <div id="item" class="item" draggable="true"></div>
+        </div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+       
+    </div>
+</body>
+<script>
+    // drag 하는 변수를 담아줄 변수
+    let target = null;
+
+    // 문서 전체에서 드래그가 시작될때
+    document.ondragstart = function(e) {
+        // classList 해당 요소의 클래스 들이 배열로 들어있다
+        // constains 메서드는 해당 내용이 배열안에 포함되어 있는지 확인 반환값 bool 값
+        // 전체 문서 안에서 이벤트가 발생한 요소가 e.target
+        // item이라는 클래스를 가지고 있는 요소를 드래그 했을때
+        if(e.target.classList.contains("item")) {
+            target = e.target;
+            // drag 하는 요소가 item 클래스가 있으면
+            // target 변수에 할당
+            target.style.backgroundColor = "red";
+            console.log("지금");
+        }
+        console.log(e);
+    }
+    // drag 하면서 태그 위로 마우스가 올라갔을떄
+    document.ondragenter = function(e) {
+        if(e.target.classList.contains("box") && (target !== null)) {
+            e.target.style.backgroundColor = "green";
+        }
+    }
+    // drag하다가 마우스가 요소 밨으로 나갔을때
+    document.ondragleave = function(e) {
+        console.log("123")
+        if(e.target.classList.contains("box") && (target !== null)) {
+            e.target.style.backgroundColor = "initial";
+        }
+    }
+    // drag 했다가 떨어트리는 요소의 가능 여부를 설정
+    // ondrop 요소를 떨어뜨리는 이벤트
+    document.ondragover = function(e) {
+        if(e.target.classList.contains("box") && (target !== null)) {
+            // 브라우저의 기본 기능으로 드래그한 요소는 해당 위치다 아니라 돌아가는 속성을 가지고 있다
+            // 이벤트의 속성에서 브아우저의 기본 속성 제거
+            e.preventDefault(); // preventDefault 이벤트의 기본속성을 제거하고 사용한다.
+
+        }
+    }
+
+    //  drag에서 해당 위치에 드래그를 종료하면 요소를 드롭시킨다.
+    document.ondrop = function(e) {
+        if(e.target.classList.contains("box") && target !== null){
+        e.target.style.backgroundColor = "initial";
+        e.target.append(target);
+        }
+
+    }
+
+    // drag그가 끝났을때
+    document.ondragend = function(e) {
+        target = null;
+        if(e.target.classList.contains("item")) {
+            e.target.style.backgroundColor = "bisque";
+        }
+    }
+    // const game = document.querySelector(".container");
+    // game.onclick = function(a) {
+    //     console.dir(a.target)
+    //     if(a.target.classList.contains("box")){
+    //         a.target.style.backgroundColor = "blue";
+    //         alert("clicked");
+    //     }
+    // }
+</script>
+</html>

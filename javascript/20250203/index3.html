@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Promise는 micro task 입니다
+    const promise = (text, time) => { 
+        return new Promise((res, rej) => {
+            // try 문안의 내용에서 오류가 발생하면 catch 문으로 넘어간다
+            try {
+                setTimeout(() => {
+                    res(text)
+                }, time);
+            }
+            catch(error) {
+                // try 문 안에 코드의 에러가 발생하면 rej 를 호출
+                rej(error)
+            }
+            
+        })
+    }
+    promise("text 1", 1000).then(result => {
+        console.log(result)
+        return promise("text2", 3000)
+    }).then((result) => {
+        console.log(result)
+        return promise("text3", 1000)
+    }).then((result) => {
+        console.log(result)
+    })
+
+    const asyncFoo = async () => {
+        // 비동기 함수 안에 서 코드의 내용이 동시적으로 실행되야 한다
+        const data = await promise("text1", 1000);// 게시글 데이터를 가져올것 나중에
+        // 비동기호 실행 되는 코드를 대기하고 완료되면 밑의 코드 실행
+        // await로 대기를 시켜서 동기적으로 코드를 호츌할수 있게
+        console.log(data)
+    }
+    // 작성해고 큰문제는 없는데 너무 없어보이고 이해를 못했구나? 회사에서 상사나 동료가
+    asyncFoo();
+    
+    // promise 는 micro task 입니다.
+
+
+
+
+</script>
+</html>
+
+<!-- then catch
+
+aysnc await -->
+
+

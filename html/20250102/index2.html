@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content    {
+            width: 500px;
+            height: 500px;
+            background-color: blanchedalmond;
+            border: 1px solid;  /* 요소의 태도리 선의 굵기, 형태, 색를 지정 여러가지의 값을 작성할때 띄어쓰기로 구분한다*/
+            /* 내부 간격, 외부 간격 */ 
+
+            /* 내부 간격 */
+
+            /* 상하 좌우 */
+            /* padding: 20px 10px; */
+
+            /* 상 좌우 하 */
+            /* padding: 30px 20px 10px; */
+            
+            /* 상 우 하 좌 시계방양 */
+            /* 0 의 값은 px 단위 생략 가능 */
+            padding: 30px 20px 10px 5px;
+
+            /* 외부 간격 */
+            margin: 20px;
+
+            /* 상하 좌우 */
+            /* margin: 20px 10px; */
+
+            /* 상 좌우 하 */
+            /* margin: 30px 20px 10px; */
+            
+            /* 상 우 하 좌 시계방양 */
+            /* 0 의 값은 px 단위 생략 가능 */
+            margin: 30px 20px 10px 5px;
+        }        
+        .item {
+            background-color: chartreuse;
+            border: 1px dashed;
+            margin: 30px 0 40px 0;   /* 외부 간격이 겹치면 더 많은 값의 간격이 적용된다  
+                                        예) 30pc을 위의 요소가 아래로 밀고 밀의 요소가 귀로 40 px 를 밀면 두 값이 
+                                        더해져서 70px가 적용된다는 것이 아니고 더 만은 값의 간격하나만 적용이 된다 */
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="content">
+        <a href="#list">두번째 리스트로 이동</a>
+        <div class="item">
+            <h1>첫번째 리스트</h1>
+            <ul>
+                <li>아이탬 1</li>
+                <li>아이탬 2</li>
+            </ul>
+        </div>
+        <div class="item"  id="list">
+            <h1>두번째 리스트</h1>
+            <ul>
+                <li>아이탬 1</li>
+                <li>아이탬 2</li>
+            </ul>
+        </div>
+
+        
+    </div>
+</body>
+</html>

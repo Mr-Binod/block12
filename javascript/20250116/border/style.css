@@ -1,0 +1,22 @@
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.border > li > span{
+    width: 200px;
+    height: 80px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+}
+
+.border > li {
+    padding: 50px;
+    display: flex;
+}

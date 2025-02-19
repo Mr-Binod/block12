@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>popup</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&family=Rubik+Vinyl&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- javascript 요소의 클래스 붙이는 행태 -->
+    <input type="checkbox" id="layer_btn">
+    <div id="layer">
+        <div class="content">
+            <div class="layer_header">
+                <h2>로그인</h2>
+                <span><label for="layer_btn"></label></span>
+            </div>
+            <div class="login_form">
+                <!-- 
+                    form : input data 요청을 조낼수 있다 예) 로그인 할때 아이디 비밀번호
+                    데이트에 보냈을때 데이터의 이름 즉 키는 { uid : abc, upw : 000}
+                    get 데이트를 조회하는 방식중에 하나
+                    button submit으로 초기값이 되어있다
+                -->
+                <form action="get">
+                    <span>
+                        <label for="">USER ID</label>
+                        <input type="get" name="uid" placeholder="아이디를 입력해주세요">
+                    </span>
+                    <span>
+                        <label for="">USER PASSWORD</label>
+                        <input type="text" name="upw" placeholder="비밀번호를 입력하세요">
+                    </span>
+                    <button type="button">로그인</button>
+                    <span>아직 회원가입을 안 하셨나요? <a href="">회원가입</a></span>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div>
+        <div id="wrap">
+            <div id="header">
+                <h1>logo</h1>            
+                <ul>
+                    <li>
+                        <label for="layer_btn">menu</label>
+                    </li>
+                </ul>  
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+<!-- 
+원하는 폰트를 가지고 적영을 하고 팝업을 
+팝업안에 텝이 구형되어 있게 1 번텝에는 로그인 2 번 텝에는 회원가입
+만드는데 텝이 구형되어서
+-->

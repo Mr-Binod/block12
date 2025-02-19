@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form id="nameForm">
+        <label for="">이름 입력</label>
+        <input type="text" name="input_name"> <!---name is key and input text is value-->>
+        <button>이름 저장</button>
+    </form>
+    <div id="my_name"></div>
+</body>
+<script>
+    // localStorage.setItem("name2", "soon");
+    // // 저장하는 키가 중복되면 덮어씌운다
+    
+    // my_name.innerHTML = localStorage.getItem("name");
+    
+    // // localStorage.removeItem("name");
+    // // console.log(localStorage.getItem("name"));
+
+    // console.log(localStorage.length);
+    // console.log(localStorage.key(1));
+
+    // 새로고침 됬을떄 문제점 메모리에 데이트가 해제된다
+    const submitHandler = (e) => {
+        // e.preventDefault();
+        // const {input_name : name} = e.target; // my_name : name is 할당하는것입니다
+        const {input_name : {value}} = e.target; // my_name : name is 할당하는것입니다
+        // {} 쓰고 바inputvalue 가 가져올수 있다
+        // form 요소 객체의 input 의 name key or input 요소가 value 로
+        // 구조분해 할당하고 한번 더
+        // input 요소 객체 안에는 입력값이 value
+        localStorage.setItem("name", value);
+
+        console.log("345")
+    }
+    console.log(typeof localStorage.getItem("name"));
+    // 값이 있으면 true 없으면 false
+    // 값이 있으면 문자열
+    //  값이 없으면 object 타입
+    if(localStorage.getItem("name")) {
+        my_name.innerHTML = localStorage.getItem("name");
+        console.log("안녕");
+    }
+    // nameForm.onsubmit = submitHandler;
+    // nameForm.onsubmit = submitHandler;
+    // nameForm.onsubmit = submitHandler;
+    // 콜백 함수 전달
+    // addEventListener 이벤트 함수를 구독
+    // addEventListener 열어번 호출해거 이벤트를 등록한 만큼 함수가 호출돤다
+    // removeEventListener 제거할때 함수의 주소르 알아야한다
+    // nameForm.removeEventListener(submitHandler)
+    nameForm.addEventListener("submit", submitHandler);
+    // nameForm.addEventListener("submit", () => {
+    //     // submit 이벤트 호출 도중에 실행 컨텍스트가 생성되고 실행되는 함수의 내용
+    //     console.log("123")
+    // })
+    // nameForm.addEventListener("submit", () => {
+    //     // submit 이벤트 호출 도중에 실행 컨텍스트가 생성되고 실행되는 함수의 내용
+    //     console.log("123")
+    // })
+    // nameForm.addEventListener("submit", () => {
+    //     // submit 이벤트 호출 도중에 실행 컨텍스트가 생성되고 실행되는 함수의 내용
+    //     console.log("123")
+    // })
+
+</script>
+</html>
