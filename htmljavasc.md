@@ -208,3 +208,9 @@ UDP : user datagram protocol
 IP : internet protocol
 요약 : summerise
 계층 : layer
+
+
+구조 분해 할당 하면서 객체 와 배열로부터 속성이나 요소를 쉽게 꺼낼수 있습니다.
+속성 : attribute (objects, classes )
+요소 : element (index of an array small component)
+구조 분해 : structural decomposition
