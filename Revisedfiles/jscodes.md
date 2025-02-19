@@ -24,9 +24,7 @@ for(let i = 0; i < 10; i++){    // if   i  is minute
         console.log(i, j);
     }
 }
-
 alert(Math.random()) //for random numbers
-
 let a = parseInt(Math.random() * 3) + 1; 
 // if 1 is not added starts from 0 random number from 1 to 3  as 1 2 3
 // if not it will count 0 also  0 1 2
@@ -36,7 +34,6 @@ while(a){
     break;
     continue;  // if continue it wont count as played
 }
-
 for (let i = 0; i <= 100; i ++) {
     arr.push(i);
 }
@@ -45,29 +42,16 @@ for (let i = 0; i <= 100; i ++) {
 
 // splice : 배경\ㄹ의 인게스의 값을 제거
 // () : 값이 두개가 들어간다 첫번재 시작 인덱스 두번째 지울 갯수
-    lottoNum.splice(randomNumber, 1);
-    result.push(number);
-    console.log("번호 세팅 끝" + lottoNum.length + "개의 번호");
+lottoNum.splice(randomNumber, 1);
+result.push(number);
+console.log("번호 세팅 끝" + lottoNum.length + "개의 번호");
 // 6개의 공을 뽑아야한다
 for (let i = 0; i < 6; i++) {
     let randomNumber = parseInt(Math.random() * lottoNum.length);
     let number = lottoNum[randomNumber];
-
-    // 실제로 생걱했을때 공을 꺼냈으면 공이 없어져야한다
-    // 해당 인덱스의 값을 비우고 뒤의 값을 모구 하나씩 때기고
-    // 해당 인덱스와 맨뒤의 값을 들어 바꾸고 맨뒤의 값만 제거한다음에 길이를 줄여버려
-    // 이런한 기능이 이미 구현이 되어이ㅆ다
-    // 메서드의 종류를 몽땅 아는것보다 메거드의 역화르을 아는게 더 중요하다
-
-    // 배열의 원하는 인덱스의 값을 제거한다 원본 배영에서
-    // 값의 얄은 복사 깊은 복사
-
-    // splice : 배경\ㄹ의 인게스의 값을 제거
-    // () : 값이 두개가 들어간다 첫번재 시작 인덱스 두번째 지울 갯수
     lottoNum.splice(randomNumber, 1);
     result.push(number);
 }
-
 
 if(this.popup.classList.contains("is-active")){
     // 켜져있가면 팝업을 끄고
@@ -79,7 +63,6 @@ else {
 
 // while 겹치는 숫자가 안나올떄까지.
 // 여러번 발생할수 있는 상황도 발생한다.
-
 console.log("로또의 추첨 결과느 두구두구두굳ㄱ");
 for (let i = 0; i < result.length; i++) {
     console.log(result[i])    
@@ -101,7 +84,6 @@ function poo() {
     }
     poo4();
 }
-
 poo();   //function doesnt execute until its called // 부루기 전에 함수는 호출되지 않아요
 
 class Child extends Mother {
@@ -116,29 +98,13 @@ const child = new Child("soon", 20);
 // city가 없어
 //{name, age, getInfo f(){}}
 
-
 let _el = document.createElement("div"); // 원하는 태그 이름 쓰면 됩니다
-
-//node div 요소
-// 변수에 할당이 되고 바로 보고있는 브라우저 화면에는 보이지 않는다
-
-// 원하는 요소의 자식으로 추가해서 위치 영역을 알여준다.
-
 box.append(_el)
-// append : 요소의 자식으로 추가
-// node list 에 포함이 되고
-// 요소가 눈에 보이게 된다
-
-// 요소의 내용을 차가해서 자식으로 추가
 let el = document.createElement("div");
-// 빈 div 생성된다
-
-// 내용을 추가해서
 el.innerHTML = "본문 내용"
 
 // 문자 text 만 작성하겠다
 el.innerTEXT = "요소 제외하고 문자만 작성하겠다."
-
 // 노드 객체
 el.classList += "box2"
 // classList 클래스의 문자열을 제공한다
@@ -173,7 +139,6 @@ for(let i = 1; i < = 5; i++){
 arr[2] === {title : "3번째 제목", content : "3번째 컹탠츠"}
 
 // 배영\ㄹ의 갯수만큼 호풀하면서 사용해야한다
-
 for(let i = 0; i < arr.length; i++){
     // DOM 요소 제어 부분은 나중에 
     // 예를 들어서 DOM 제어를 한다
@@ -181,8 +146,6 @@ for(let i = 0; i < arr.length; i++){
     // 예시만 든것
     myTag.InnerHTML = arr[i].title + " | " + arr[i].content;  // just a example dont follo the same
 }
-
-
 const init = () => {
     // for문 반복문 
     // 배열 메서드
@@ -208,15 +171,12 @@ uid.onchange
  
  e.touches[0].clientX.
 
-
-
 console.log(data.toString());
 const content_JSON = JSON.stringify(data);
 localStorage.setItem("comment", content_JSON);
 fetch("api").then((result) => {
     result.json(); //.then 안에 있는 객체에만 사용 가능 
 })
-
 const arrTemp = [...arr];  // spread 연산자
 const searchArr = arrTemp.filter((el) => el.title.startsWith(e.target.value))
 location.href = `../detail/index.html?index=${index + (pageIndex -1) * PAGENUM}`;
@@ -225,3 +185,4 @@ const clickHandler = (e) => {
     const contentNode = e.target.parentNode.parentNode;
     const {index} = contentNode.dataset;
 const arrTemp = [...arr];  // spread 연산자const {index} = contentNode.dataset;
+}
