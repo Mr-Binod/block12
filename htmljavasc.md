@@ -193,7 +193,7 @@ bind : bind is a process of
 응용 : application
 우세했 : dominate
 통신 : communication
-이진수 : binary
+2진수 : 2 digit binary
 도달 : arrival
 전송 : transfer
 점유 : occupied
