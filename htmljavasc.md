@@ -214,3 +214,10 @@ IP : internet protocol
 속성 : attribute (objects, classes )
 요소 : element (index of an array small component)
 구조 분해 : structural decomposition
+
+---------------------------20250220---------------------------
+
+초과 : excess
+세분화 : segmentation
+정의로 : by justice
+인련의 : series

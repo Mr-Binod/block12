@@ -42,7 +42,7 @@ const { request : {getRequest}} = require("./lib/request")
 // {request : { getRequest }}
 const getResponse = require("./lib/response")
 const server = net.createServer((client) => {
-    // client.setEncoding("utf8")
+    // client .setEncoding("utf8")
     let buffer = Buffer.alloc(0); // buffer 를 사용할 변수로 정의만 해놓을것
     client.on("data", (chunk) => {
         console.log(chunk, "chunk");

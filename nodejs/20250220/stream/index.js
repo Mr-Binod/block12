@@ -36,8 +36,8 @@ const transformData = new Transform({
 // 매개변수 두변째 옵셩값ㅇ르 객체로 전달
 // 파일을 읽어오는데 스트림 데이터을 읽어온다
 const text = fs.createReadStream("text.txt", {highWaterMark : chunkSize} );
-console.log(text, "skkkkkkkkkkk")
-console.log(transformData, "transformData");
+console.log(text)
+
 
 // 파일 읽기 스트림 생성
 
