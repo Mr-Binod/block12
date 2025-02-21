@@ -18,7 +18,7 @@ console.log("실행 1");
 
 // 비동기적 호출
 // if(!folder) {
-//     fs.mkdir("Test", (err) => {
+//     fs.mkdir("./Test", (err) => {
 //         if(err) {
 //             console.lo(err);
 //         }

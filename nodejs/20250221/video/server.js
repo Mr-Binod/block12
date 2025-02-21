@@ -31,7 +31,7 @@ const server = http.createServer((req, res) => {
 
         const state = fs.statSync(mypath);
         const fileSize = state.size;
-        console.log(fileSize);
+        console.log(fileSize, "filesize");
         
         // 클라이언트 측에서 range 속성을 헤더에 담아서 보내준다
         // video 테그로 요청을 배내면 헤더에 range 가 포함된 헤더의 내용을 요청한다
@@ -41,7 +41,8 @@ const server = http.createServer((req, res) => {
         if(headerRange) {
             // 영상을 나눠서 처리하면서 버퍼링 처리가 되면 영상을 재생
             const progress = headerRange.replace("bytes=", "").split("-")
-            console.log(progress);
+            console.log(progress[0],"asdfsda");
+            console.log(progress[1],"asdfdfdf");
             // 영상을 송출하다가 문제ㅐ가 생겨서 서버가 종료되었다
             // 영상을 보고있었는데 서버가 문제생겨서 끈겼다
             // 서버가 정상적으로 동작을 하게되었을때

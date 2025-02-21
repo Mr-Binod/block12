@@ -26,7 +26,7 @@ const b = () => {     // 이거는 module scope   화살표 함수에 는 this b
 }
 b()
 
-console.log(this)  // 이거는 모듈 스코프 module scope
+console.log(this, "this")  // 이거는 모듈 스코프 module scope
 
 init()
 play()

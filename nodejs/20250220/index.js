@@ -59,3 +59,5 @@ const binaryToString = (binary) => {
     return result;
 }
 console.log(binaryToString(c));
+
+console.log(buf)
