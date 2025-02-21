@@ -47,13 +47,13 @@ ${body}`
 */
 
 // 클라이언트에게 응답할 객체를 최종 완성
-const getResponse = (socket, request) => {
+    const getResponse = (socket, request) => {
     // msg 매개변수로 body 내용과 상태코드를 두가지를전달하면 응답 메시지를 반환하는 함수 생성
     const msg = getMessage(request);
 
     // 응답의 내용을 가지고 있을 객체
     return {
-        notFound : () => {
+        notFound : (body) => {
             // 잘못된 요청을 했을떄 응답할 메서드
             const errorMessage = msg(body, 404);
             socket.write(errorMessage);
@@ -79,7 +79,7 @@ const getResponse = (socket, request) => {
             socket.write(msg(file));
             socket.end();
         },
-
+ 
     }
 }
 

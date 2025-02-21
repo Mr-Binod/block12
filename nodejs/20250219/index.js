@@ -12,7 +12,7 @@ const PORT = 3000;
 // 서버 객체 생성
 // 요청을 받았을떄 호출할 함수의 내용을 배개변수로 전달
 const server = net.createServer((client) => {
-    console.log(client)
+    console.log(" client", client )
     // client 가 서버에 접속을 콜백함수 실행
     // 요청의 데이터를 받으면 
     //  바이너리 데이터 형식의 데이터를 받는다
@@ -29,7 +29,7 @@ const server = net.createServer((client) => {
     // 이 문자열을 객체로 파싱한 내용이 요청 객체
     // 헤더의 내용에서 중요한 값들 요청 방식과 컨텐츠의 타입
     // index 이런식으로 요청 경로에 따라서 어떤 내용의 데이터를 요청했는지 를 판별한다
-    // GET /index HTTP/1.1   // 요청 방식은 GET의 방식 http 버전은 1.1 버전을 사용하고 있다.
+    //// GET /index HTTP/1.1   // 요청 방식은 GET의 방식 http 버전은 1.1 버전을 사용하고 있다.
     // 1.1 버전은 지속적인 연결을 할수있게 되었다. 캐시 작업 인증 에러처리등의 기능이 개선됨
     // 호환성 비교적으로 간단하게 구현이 가능해서 가장 큰 이유는 1.1 을 사용하면서 굳이 2 버전을 사용할 이유가 없기때문에
     // 엿날에 만들어진 브라우저들은 2 버전을 지원하지 못하는 경우가 있을수 있다
@@ -69,7 +69,7 @@ const server = net.createServer((client) => {
         <li>item</li>
     </ul>
 </body>
-</html>`;
+</html>`
 
         // 서버에서 client 에게 응답 헤거
         // 응답을 할때 숫자로 표현한 상태의 내용
@@ -79,11 +79,10 @@ const server = net.createServer((client) => {
         // 400 404 실패
         // 500 서버가 에러 발생
         const resHeader = `HTTP/1.1 200 ok
-        Content-type : text/html
-        Content-length : ${body.length}
+Content-type : text/html
+Content-length : ${body.length}
 
-        ${body}
-        `
+${body}`
         // 브라우저의 화면에 받은 데이터를 작성하는 메서드
         client.write(resHeader);
 

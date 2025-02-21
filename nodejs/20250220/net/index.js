@@ -42,7 +42,7 @@ const { request : {getRequest}} = require("./lib/request")
 // {request : { getRequest }}
 const getResponse = require("./lib/response")
 const server = net.createServer((client) => {
-    // client .setEncoding("utf8")
+    // client.setEncoding("utf8")
     let buffer = Buffer.alloc(0); // buffer 를 사용할 변수로 정의만 해놓을것
     client.on("data", (chunk) => {
         console.log(chunk, "chunk");
@@ -65,6 +65,9 @@ const server = net.createServer((client) => {
             // console.log("/boardData 경로로 요청 받았고 게시글 데이터 응답")
             res.notFound("에러 페이지");
             
+        }
+        else {
+            res.notFound("에러 발생");
         }
 
         console.log(req);

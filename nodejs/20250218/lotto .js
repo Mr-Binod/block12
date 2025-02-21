@@ -6,7 +6,7 @@ const lottoNum = [];
 const result = [];
 
 const init = () => {
-    for (let i = 0; i <+ 45; i++) {
+    for (let i = 0; i < 45; i++) {
         lottoNum.push(i);        
     }
 }
