@@ -12,14 +12,12 @@ const statemessage = {
 // 300 : 리다이렉트
 // 400 : 클라이언트 이슈
 // 500 : 서버의 이슈
-
 // 요청의 다한 응답 메시지를 작성할 함수
 
 // function a () {
 //     return function () { 
 //     }
 // }
-
 const getMessage = (request) => (body, stateCode = 200) => {  // () => return;  () => ()=>{}
     const bodyBuffer = Buffer.from(body); 
     // 요청한 내용의 컨텐츠 타입을 확인을 해야한다
@@ -27,7 +25,6 @@ const getMessage = (request) => (body, stateCode = 200) => {  // () => return;  
     // 응답을 할떄 요청ㅇ한 내용의 컨텐츠를 응답해줘야 하니
     // 내가 이 컨텐츠를 응답했어
     const ContentType = request.header.headers.Accept.indexOf("text/html") !== -1 ? "text/html" : request.header.headers.Accept;
-    
     // HTTP/1.1 200 ok
     // 응답 메시지 생성
     return `HTTP/1.1 ${stateCode} ${statemessage[stateCode]}
@@ -37,7 +34,6 @@ Content-Length : ${bodyBuffer.length}
 
 ${body}`
 }
-
 /*
     const temp = getMessage();
     temp = (body, stateCode = 200) => {
@@ -45,7 +41,6 @@ ${body}`
     }
     temp("123") === body = 123, stateCode = 200
 */
-
 // 클라이언트에게 응답할 객체를 최종 완성
     const getResponse = (socket, request) => {
     // msg 매개변수로 body 내용과 상태코드를 두가지를전달하면 응답 메시지를 반환하는 함수 생성

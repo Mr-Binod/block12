@@ -10,9 +10,9 @@ const net = require("net");
 const PORT = 3000;
 
 // 서버 객체 생성
-// 요청을 받았을떄 호출할 함수의 내용을 배개변수로 전달
+// 요청을 받았을때때 호출할 함수의 내용을 매매개변수로 전달
 const server = net.createServer((client) => {
-    console.log(" client", client )
+    // console.log(" client", client , "client2")
     // client 가 서버에 접속을 콜백함수 실행
     // 요청의 데이터를 받으면 
     //  바이너리 데이터 형식의 데이터를 받는다

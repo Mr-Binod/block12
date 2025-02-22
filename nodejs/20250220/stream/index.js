@@ -1,12 +1,12 @@
 
 
 
-// nodejs 의 내장 모귤
+// nodejs 의 내장 모듈듈
 //  stream
 
 // Transform 스트림 데이터를 읽고 데이터를 변환한뒤 자른 스트림으로 데어터를 전달 하는데 사용
 const {Transform} = require("stream");
-
+const path = require("path");
 // nodejs 의 내장 모듈을 사용해거
 // 파일을 읽거나 쓰거나
 
@@ -16,7 +16,12 @@ const fs = require("fs");
 // 청크의 크기
 // 스트림에서 작업할때 데이터를 받고 처리할때마다 각 청크의 크기를 정해주자
 
-const chunkSize = 64 * 1024  // 64KB
+const chunkSize = 1 * 1024  // 64KB
+const mypath = path.join(__dirname,"text.txt");
+console.log(mypath)
+const state = fs.statSync(mypath);
+const fileSize = state.size;
+console.log(fileSize, "filesize")
 
 // Transform 생성자 함수 호출할때 필요한 옵션의 값을 가지고 있는 객체
 const transformData = new Transform({
@@ -36,7 +41,7 @@ const transformData = new Transform({
 // 매개변수 두변째 옵셩값ㅇ르 객체로 전달
 // 파일을 읽어오는데 스트림 데이터을 읽어온다
 const text = fs.createReadStream("text.txt", {highWaterMark : chunkSize} );
-console.log(text)
+// console.log(text, "text")
 
 
 // 파일 읽기 스트림 생성

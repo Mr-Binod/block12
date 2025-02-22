@@ -8,7 +8,6 @@ const buf3 = Buffer.from("안녕"); // ㅇ ㅏ ㄴ ㄴ ㅕ ㅇ
 // console.log(buf, buf2.toString(), buf3.toString());
 
 // buffer to string === converts binary data to alphabets incoding 
-
 // 빈공간의 버퍼에 내용을 넣은것
 buf.write("aaaaa")
 console.log(buf.toString());
@@ -21,11 +20,9 @@ let b = 12;
 // toString 문자열로 변환하면서 2 진수로 표현한다 === 1000101
 // padStart(8, "0") === 매개변수를 전달한 첫번째 값의 길이의 문자가
 // 아니면 앞에 8 자리가 아니면 0으로 채운다.
-a = a.charCodeAt(0).toString(2).padStart(8, "0") ;
-console.log(a)
-
+a = a.charCodeAt(0).toString(2).padStart(8, "0");
+console.log(a, "a");
 b = b.toString(2).padStart(8, "0");
-
 let c = a + b;
 console.log(c);
 
@@ -42,8 +39,9 @@ const binaryToString = (binary) => {
         // substr 문자열의 어트 해당 위치를 변환
         // parseInt 매개변수로 전달한 정수로 변환을 하는데
         // 두변재 매개변수로 값을 전달하면 어떤 형식의 문자열을 변환하는지 진수 표현 숫자를 전달
-        // parseInt("10101010", 2) === 이진수의 문자열을 정수 숫자로 변황하겠다
+        // parseInt("10101010", 2) === 이진수의 문자열을 정수 숫자로 변환환하겠다
         const temp = parseInt(binary.substr(i, 8), 2)
+        console.log("temp ", temp)
         // String.fromCharCode 아스키 코드를 문자열로 변환
         // 아스키 코드의 변환시 값이 없으면
         // console.log(temp, "temp")
@@ -59,5 +57,4 @@ const binaryToString = (binary) => {
     return result;
 }
 console.log(binaryToString(c));
-
 console.log(buf)
