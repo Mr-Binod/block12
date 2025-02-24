@@ -221,3 +221,10 @@ IP : internet protocol
 세분화 : segmentation
 정의로 : by justice
 인련의 : series
+
+
+--------------20250224-------
+
+배포 : distribution
+기능 : process
+정적 routing : 브라우저에서  요청 받을떄 요청 받은 경로의 파일 내용 보여준다.

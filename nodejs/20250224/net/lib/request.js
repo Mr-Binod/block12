@@ -10,7 +10,7 @@ const SPACE = " "; // 빈공백
 const NEW_LINE = "\r\n"; // 한줄 내린것
 const TWO_LINE = NEW_LINE + NEW_LINE;
 const START_LINE_NAMES = ["method", "url", "version"];
-const buffer1 = Buffer.from("hello");
+
 
 // 쿼리 문자열 파싱
 const getQuery = (queryString) => {
@@ -84,9 +84,9 @@ const getHeaders = (headerString) => {
     // 줄마다 배열의 구분으로 추가해서 배열의 요소는 한줄한줄 하나의 요소로 포함된다
     // shift는 배열에서 첫번째 요소를 내보낸다
     const startLineString = headerLine.shift();
-    console.log(headerLine);
+    // console.log(headerLine);
     const startLine = getStartLine(startLineString);
-    console.log(startLine);
+    // console.log(startLine);
     // 헤더의 가장 중요한 메시지는 첫번째 라인
     // console.log(headerLine);
     // Header의 남어지 값을 객체로 변환
@@ -131,7 +131,5 @@ const getRequest = (buffer) => {
 }
 
 // { request : { getHeaders }}
-
-
 
 exports.request = { getRequest };

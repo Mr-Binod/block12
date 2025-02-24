@@ -36,3 +36,15 @@ server.listen(3000, () => {
 })
 const videoStream = fs.createReadStream(mypath, {start, end});
 videoStream.pipe(res);
+const isFile = fs.statSync(findPath).isFile();
+
+let b = 12;
+b = b.toString(2).padStart(8, "0"); // 2 진수 8 bit 으로 변환
+// console.log(" client", client , "client2")
+// client 가 서버에 접속을 콜백함수 실행
+// 요청의 데이터를 받으면 
+//  바이너리 데이터 형식의 데이터를 받는다
+// utf8 의 형식으로 문자열 인코딩
+client.setEncoding("utf8");
+
+const temp = parseInt(binary.substr(i, 8), 2)

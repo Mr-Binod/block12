@@ -10,7 +10,7 @@ const buf3 = Buffer.from("안녕"); // ㅇ ㅏ ㄴ ㄴ ㅕ ㅇ
 // buffer to string === converts binary data to alphabets incoding 
 // 빈공간의 버퍼에 내용을 넣은것
 buf.write("aaaaa")
-console.log(buf.toString());
+console.log(buf.toString(),"asdfdsaf");
 
 let a = "A";
 let b = 12;
