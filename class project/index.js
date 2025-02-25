@@ -194,11 +194,10 @@ const paginationContent = (i) => {
     console.log((i - 1) * Pagenum);
     console.log(pagingContent);
     render(pagingContent);
-
 }
 
 inputSearch.onkeyup = (e) => {
-    const arrTemp = [...datA];
+    // const arrTemp = [...datA];
     const searchArr =  [...datA].filter((el) => el.name.startsWith(e.target.value))
     console.log(searchArr);
     render(searchArr);
