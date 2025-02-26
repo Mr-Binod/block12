@@ -186,3 +186,6 @@ const clickHandler = (e) => {
     const {index} = contentNode.dataset;
 const arrTemp = [...arr];  // spread 연산자const {index} = contentNode.dataset;
 }
+
+if(e.keyCode !== 13) //enter key code 13
+    return;

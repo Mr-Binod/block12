@@ -8,27 +8,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div id="Title">
-        <ul class="titleUl">
-            <li id="Home">HOME</li>
-            <div class="EditUploadBtn">
+    <div id="Wrap">
+        <div id="Title">
+            <ul class="titleUl">
+                <li id="Home">HOME</li>
+                <div id="searchBar">
+                    <input type="text" id="searchsubject">
+                    <span><i class="fa fa-search"></i></span>
+                </div>
+                <div class="EditUploadBtn">
 
-                <li id="Upload">upload</li>
-                <li id="Edit">edit</li>
-            </div>
-        </ul>
-    </div>
+                    <li id="Upload">upload</li>
+                    <!-- <li id="Edit">edit</li> -->
+                </div>
+            </ul>
+            
+        </div>
+    
+   
     <div id="Upload1">
 
         <form id="UploadWrap">
             <div id="UploadContent">
+                <div id="uploadtitlE">추가 페이지</div>
                 <div id="UploadUid">
-                    <label for="">작성자 : <span id="Uid">1</span></label>
+                    <label for="">작성자 : </label>
+                    <input type="text" id="userid" name="Userid">
                 </div>
                 <div id="UploadDate">
-                    <label for="">작성일 : <span id="Date">1</span></label>
+                    <label for="">작성일 : <span id="DatE"></span></label>
                     
                 </div>
                 <div id="UploadSubject">
@@ -45,8 +56,8 @@
                 </div>
             </div>
             
-        </div>
-    </form>
+        </form>
+    </div>
         
     </body>
 <script src="../public/upload.js"></script>
