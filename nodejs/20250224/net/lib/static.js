@@ -1,11 +1,12 @@
-
-
+1
 
 // 서버에 정적 파일 폴더에 있는 모든 파일을 순화하면서 파일 검사
 
 const fs = require("fs");
 const path = require("path");
 
+// console.log(path.join(__dirname))
+// console.dir(path)
 // public 루트 경로
 const rootName = "public";
 
@@ -22,6 +23,25 @@ const find = (currentPath = rootDir) => {
     // readdirSync : 파일과 디겔터리 목록을 자져올수 있다
     // 반환 타입 배역 
     const directory = fs.readdirSync(currentPath);
+    // console.log("dir",(index in directory))
+
+    // Stats {
+    //     dev: 0,
+    //     mode: 16822,
+    //     nlink: 1,
+    //     uid: 0,
+    //     gid: 0,
+    //     rdev: 0,
+    //     blksize: 4096,
+    //     ino: 7036874417873531,
+    //     size: 0,
+    //     blocks: 0,
+    //     atimeMs: 1740519295585.9265,
+    //     mtimeMs: 1740519294712.699,
+    //     ctimeMs: 1740519294712.699,
+    //     birthtimeMs: 1740519294710.69
+    //   } isFile
+      
     // console.log(directory);
     // console.log(directory);
     // public/css
@@ -29,7 +49,7 @@ const find = (currentPath = rootDir) => {
     // public/css/mypage
     // public/css/main
     // public/css/shop
-    
+    `kkkkkkkkkkkkkkkkkkkkkkkkkk`
     for(const index in directory) {
         const findPath = path.join(currentPath,directory[index]);
         // console.log(findPath);
@@ -54,11 +74,12 @@ const find = (currentPath = rootDir) => {
             // console.log(key)
             // 파일의 /로 시작하는 폴더 경로까지를 만드고
             const httpPath = path.join(key, directory[index]).replaceAll("\\", "/")
-            // console.log(httpPath);
+            console.log(httpPath, directory[index], "qwq");
             // 모든 파일의 경로를 완성
             result[httpPath] = directory[index];
         }
     }
+    console.log(result)
     return result;
 }
 // const log = find(rootDir);
