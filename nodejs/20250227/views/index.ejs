@@ -1,0 +1,62 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- < should seperated by space and cant ignore -->
+     <!-- should use < >  with every line-->
+    <% for(let i = 0; i < count; i++) { %>
+
+        <%= name %>  메인 페이지
+    <% } %>
+    <% if(count == 5) { %>
+        count 가 5 야
+    <% } %>
+    <ul>
+        <% if(board !== null) { %>
+            <% for(let i = 0; i <board.length; i++) {%>
+                <a href="/detail?index=<%=board[i].index - 1 %>">이것도 눌러봐</a>
+                <li id="list" style="display: flex; user-select: none;" onclick="detailVIew('<%= board[i].index %>')">
+                    <div><%= board[i].index %></div>
+                    <div><%= board[i].title %></div>
+                    <div><%= board[i].content %></div>
+                    
+                </li>
+                <button onclick="Deletebtn('<%= i %>')">삭제</button>
+                <% } %>
+        <% } %>
+    </ul>
+    <!-- form 의 기본 mehod get  -->
+     <!-- local host 에는 action 에 locaㅣfile 경로로 접근 할수 있다 -->
+    <!-- <form action="http://www.blockchai.com/board" method="post">  -->
+    <form action="/board?index=1" method="post"> 
+        <label for="">제목</label>
+        <input type="text" name="title">
+        <label for="">내용</label>
+        <input type="text" name="content">
+        <button>글 추가</button>
+    </form>
+    <!--  -->
+    <form action="/update"></form>
+            
+</body>
+<script>
+    const detailVIew = (index) => {
+        location.href = `/detail?index=${index - 1}`;
+    }
+    // const detailVIew = () => {
+    //     location.href = `/detail?index=${board[i].index - 1}`;
+    // }
+    const Deletebtn = (index) => {
+        console.log(index);
+        const Index = parseInt(index);
+        location.href = `/delete?index=${Index}`;
+    }
+    
+</script>
+</html>
