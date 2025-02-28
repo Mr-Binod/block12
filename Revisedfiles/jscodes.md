@@ -189,3 +189,20 @@ const arrTemp = [...arr];  // spread 연산자const {index} = contentNode.datase
 
 if(e.keyCode !== 13) //enter key code 13
     return;
+
+const getQuery = (queryString) => {
+    if(queryString.length === 0) return null;
+    // index=1&age=20
+    const query = queryString.split("&");
+    // index [index=1, age=2]
+    const query2 = query.map((value) => value.split("="))
+    console.log(query2, "query")
+    // [ [ 'index', '1' ], ['age', '20'] ] query
+    const query3 = query2.reduce((acc, line) => {
+        const [key, value] = line;
+        acc[key] = value;
+        return acc;
+    }, {})
+    // {index : 1, age : 20}
+    return query3;
+}

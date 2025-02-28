@@ -228,3 +228,14 @@ IP : internet protocol
 배포 : distribution
 기능 : process
 정적 routing : 브라우저에서  요청 받을떄 요청 받은 경로의 파일 내용 보여준다.
+
+
+상대 경로 : ./board
+절대 경로 : /board
+
+require 할떄 동적으로 export and require each other then 
+there will be circular refrence error
+
+server   require(./board)
+board    require(./server)  
+#### 순환참조 발생한다 : circular reference #### !important
