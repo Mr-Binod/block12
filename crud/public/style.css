@@ -86,7 +86,7 @@ ul, li {
 }
 #UploadContent1 {
     width: 750px;
-    height: 850px;
+    height: 820px;
     border: 7px solid rgb(70, 8, 8);
     display: flex;
     flex-direction: column;
@@ -156,10 +156,20 @@ ul, li {
     border: 2px solid  #745e35;
     
 }
-
-#Details, #Details1 {
-    width: 700px;
-    height: 450px;
+#Details1 {
+    width: 650px;
+    height: 420px;
+    outline-style: none;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #fffdf8;
+    border: 2px solid  #745e35;
+    border-radius: 8px;
+    resize: none;
+}
+#Details {
+    width: 650px;
+    height: 400px;
     outline-style: none;
     padding: 10px;
     font-size: 16px;
@@ -259,10 +269,15 @@ ul, li {
     
     
 }
-
+#Maxcontent {
+    width: 1000px;
+    height: 525px;
+    margin: 0px auto;
+    /* position: relative; */
+}
 
 #contenT {
-    
+    /* position: absolute; */
     width: 1000px;
     height: max-content;
     margin: 0px auto;
@@ -290,12 +305,13 @@ ul, li {
     padding: 0 20px;
 }
 .UContent:hover{
-    height: 90px;
-    font-size: 25px;
+    height: 70px;
+    font-size: 22px;
     font-weight: bold;
     border-radius: 3px;
     border: 2px solid #8d7a49;
     background-color: #e4e1d7a9;
+    box-sizing: border-box;
 }
 .UContent:hover li {
     border-left: 0px !important;
@@ -470,15 +486,15 @@ footer ul {
     height: max-content;
 }
 #detailswrapul li:nth-child(2) {
-    width: 450px;
+    width: 250px;
     border-bottom: 1px solid #979735;
 }
 #detailswrapul li:nth-child(3) {
-    width: 450px;
+    width: 250px;
     border-bottom: 1px solid #979735;
 }
 #detailswrapul li:nth-child(4) {
-    width: 450px;
+    width: 250px;
     border-bottom: 1px solid #979735;
 }
 /* .UID {
@@ -491,7 +507,7 @@ footer ul {
     padding: 20px;
     padding-left: 60px !important;
     border: 1px solid #806e36e7;
-    background-color: #ffffff;
+    background-color: #e7e3d5e7;
     border-radius: 15px;
     box-sizing: border-box;
 }
@@ -563,6 +579,8 @@ footer ul {
 }
 
 #Popup {
+    position: absolute;
+    top: 200px;
     width: 300px;
     height: 200px;
     background-color: #eeedeba9;
@@ -603,18 +621,25 @@ footer ul {
     color: aliceblue;
     border-color: #b13030e3;
 }
-
+/* 
 .isactive #detailswrapinside {
     display: none;
-}
+} */
 
 .isactive #Popcontent {
     min-width: 1000px;
-    height: calc(100vh - 180px);
-    padding: 50px;
-    background-color: #a5a4a4;
+    height: calc(100vh - 80px);
+ 
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+   
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
+#footer {
+    font-size: 14px;
+}

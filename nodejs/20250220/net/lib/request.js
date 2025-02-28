@@ -19,7 +19,8 @@ const getQuery = (queryString) => {
     const query = queryString.split("&");
     // index [index=1, age=2]
     const query2 = query.map((value) => value.split("="))
-    // [[index, 1], [age, 2]]
+    console.log(query2, "query")
+    // [ [ 'index', '1' ], ['age', '20'] ] query
     const query3 = query2.reduce((acc, line) => {
         const [key, value] = line;
         acc[key] = value;
@@ -135,3 +136,11 @@ const getRequest = (buffer) => {
 getRequest(buffer);
 
 exports.request = { getRequest };
+
+
+
+
+
+
+const a1 = ["hello", hi]
+const a  = {helloo : "hi"}
