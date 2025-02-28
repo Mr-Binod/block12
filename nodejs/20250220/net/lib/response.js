@@ -6,7 +6,7 @@ const path = require("path")
 
 const statemessage = {
     200 : "ok",
-    404 : "NOT FOUND",
+    404 : "NOT FOUND"
 }
 // 200 : 성공의 내용
 // 300 : 리다이렉트

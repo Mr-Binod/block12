@@ -95,7 +95,7 @@ const getHeaders = (headerString) => {
         acc[key] = value;
         return acc;
     },{})
-    // console.log(headers);
+    console.log(headers);
     // 여러개의 값을 내보내는 경우
     return {
         startLine, headers
@@ -132,6 +132,6 @@ const getRequest = (buffer) => {
 
 // { request : { getHeaders }}
 
-
+getRequest(buffer);
 
 exports.request = { getRequest };

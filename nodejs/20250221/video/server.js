@@ -37,7 +37,7 @@ const server = http.createServer((req, res) => {
         // video 테그로 요청을 배내면 헤더에 range 가 포함된 헤더의 내용을 요청한다
         const headerRange = req.headers.range;
         // Range 가 있으면 영상을 처리하는 방식을 나눠서 처리를 하고
-        console.log(headerRange);
+        console.log(headerRange, req.headers.range, 'asdadsa');
         if(headerRange) {
             // 영상을 나눠서 처리하면서 버퍼링 처리가 되면 영상을 재생
             const progress = headerRange.replace("bytes=", "").split("-")

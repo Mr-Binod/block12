@@ -183,7 +183,7 @@ bind : bind is a process of
 ------------------------20251901-----------------------
 
 형변환해서 : transform into a shape
-비율적이기 : 
+비율적이다 : 예컨대 거리, 무게, 시간 등이 대표적인 비율 척도라고 할 ...
 성능광 : perfomance
 확장성을 : scaleability
 독립된 파일 : independent files
@@ -200,7 +200,7 @@ bind : bind is a process of
 일괄 : consistent
 표준 : standard
 상호작용 : interacting
-논리적인 연결 : ligical connection
+논리적인 연결 : logical connection
 응답 : response
 HPPT : hyper text transfer protocol
 TCP : transmission control protocol
@@ -225,6 +225,9 @@ IP : internet protocol
 
 --------------20250224-------
 
+깊은 복사 : 주소를 참조한다.. deep copy
+얕은 복사 : 값만 참조한다. shallow copy
 배포 : distribution
 기능 : process
 정적 routing : 브라우저에서  요청 받을떄 요청 받은 경로의 파일 내용 보여준다.
+응용 게층 상호작용 : interaction  요청을 보내고 응답을 받는다    application layer
