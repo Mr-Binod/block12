@@ -1,0 +1,39 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="./edit?index=<%= index %>" method="post" id="editform">
+        <span><%= index %></span>
+        <label for="">닉네임 :</label> <br>
+        <input type="text" name="uname" id=""> <br>
+        <button onsubmit="Editform('<%= index %>')">submit</button>
+        <button type="button" onclick="deleteacc('<%= index%>')">회원 탈퇴퇴</button>
+    </form>
+
+</body>
+<script>
+    // const Editform = (index) => {
+    //     console.log(index, "form")
+    //     location.href = `edit?index=${index}`;
+    // }
+    const deleteacc = (index) => {
+        location.href = `delete?index=${index}`;
+    }
+</script>
+</html>
+
+
+<!-- location.href = `/delete?index=${index}`;
+http://localhost:3000/delete?index=0
+
+location.href = `delete?index=${index}`;
+http://localhost:3000/user/delete?index=0 -->

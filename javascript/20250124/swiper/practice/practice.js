@@ -67,7 +67,8 @@ swiper_ul.ontransitionend = () => {
         }, 100);
     }
 }
-   
+
+
 
 
 

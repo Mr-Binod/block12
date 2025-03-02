@@ -14,19 +14,23 @@ const signupUser = (uid, upw) => {
 
 // 로그인 로직 처리 데이터를 조회
 const selectUser = (uid, upw) => {
+    console.log(users.filter(e => (e.uid === uid) && (e.upw === upw)),"hhh")
+    // [ { uid: '1', upw: '1' } ] hhh
     return users.filter(e => (e.uid === uid) && (e.upw === upw))
 }
 
 // 아이디 중복(duplication)  체크 
 const selectUserId = (uid) => {
     return users.filter(e => {
-        console.log(e.uid === uid)
-        console.log(e.uid)
-        console.log(uid)
+        // console.log(e.uid === uid)
+        // console.log(e.uid)
+        // console.log(uid)
         return e.uid === uid // true or false return
     });
 }
 // console selectUserId = (uid) => e.uid === uid;
 // console selectUserId = (uid) => return e.uid === uid;
 
-module.exports = {signupUser, selectUser, selectUserId}; 
+
+
+module.exports = {signupUser, selectUser, selectUserId }; 

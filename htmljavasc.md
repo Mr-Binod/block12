@@ -72,31 +72,42 @@ TDZ (Temporal Dead Zone) :  if we declare a variable but didnt assign a value in
 
 
 <!-- -------------------20250110 javascript---------- -->
-
+할당 : assign
+재할당 : re-assign
 매개병수 : function parameter   // function(매개병수) {}
 논리 연산자 : bool operator
 중괄호 : (middle or curly bracket)
 전역 스코프 : global scope
 지역 스코프 : local scope
 특징 : characterstics
-호출출 : call the functions or variable
+호출 : call the functions or variable
 변수 : variable name 
 참조하다 : calling, referring
 반환 : return
 중복 연산자 : repitition sign
 생성 단개 먼저 하고 실행을 시킨다 : creating and storing data 
 first then processing
+
 - 스코프 체인 어휘적 위치상에 스코프 상위로
-어휘적위치에 : 
+어휘적위치에 : lexical scoping (static scoping) 함수 안에서 선언된 변수는 안에 선언 된 함수의 상위 스코프으로
+참조할수 있다.
+
 `function name(myValue) {
     return "안녕"
 }
 name(); // 어휘적위치에 "안녕"`
 
 ``` ### 참조 타입의 싶은 복사 얕은 복사 ```
-- 얕은 복사 : 값을 복사흐는 방식에서 참조타입의 주소를 복사하는 방식
-- 깊은 복사 : 값을 복사흐는 방식에서 참조타입의 값을 복사하는 방식
 
+- 얕은 복사 (`shallow copy`): 값을 복사하는 방식에서 참조타입의 값을 복사하는 방식  // spread operator(스프래드 연산자) 
+const data = [1, "hello", true]
+const data1 = {name : "moon", age : 25}
+`const b = [...data] ,const c = {...data1}`
+- 원시타입 (primitive type) : 불변성을 가지고 새로운 데이터가 재할당되면 이전의 주소를 새로운 겂의 주소를변경하고 이전 주소는 이후에 해제된다.
+
+- 깊은 복사 (`deep copy`): 값을 복사하하는 방식에서 참조타입의 주소를 복사하는 방식
+`JSON.stringify(), JSON.parse()`
+- 참조타입 (reference type): 주소를 가르키는 주소의 값이 있고 값을 변경할때 heap 메모이에소 참조되고있는 주소의 값이 
 
 
 <!--------------------------------20250114------------------------------------------>

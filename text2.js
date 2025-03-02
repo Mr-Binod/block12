@@ -12,10 +12,10 @@
 
 
     // const query2 = query.map((value) => value.split("="))
+    // const index = "index";
+    // const age = "age";
     // // [["index", "1"], ["age", '2']]
-    const index = "index";
-    const age = "age";
-    const query2 = [[index, 1], [age, 2]]
+    const query2 = [['index', '1'], ['age', '2']]
     const query3 = query2.reduce((acc, line) => {
         const [key, value] = line;
         acc[key] = value;
@@ -23,7 +23,7 @@
         return acc;
     }, {})
     console.log(query3)
-
+    // {index : 1, age : 2}
 
 
     // const c = {};  a.el
@@ -44,7 +44,12 @@
     // {
     //     value : "123"
     // }
-
+    const headers = headerLine.reduce((acc, line,) => {
+        const [key, value] = line.split(": ");  // localhost:3000',  ["localhost", "3000"]
+        // [["localhost"], ["3000"]]
+        acc[key] = value;
+        return acc;
+    },{})
     let ab = {};
     // const value = "value"
     ab["value"] = "345";

@@ -117,9 +117,9 @@ const getRequest = (buffer) => {
     // 요청 메시지가 전부 전송이 되었는지 확인
     if(isHeaderPending) return null;
 
-    // const a = [1,2,3];
+    // const a = [1,2];
     // const [b, ...c] = a;
-    // b = [1], c [2,3]
+    // b = [1], c [2]
     
     const [headerString, ...bodyString] = buffer.toString().split(TWO_LINE);
     const body = bodyString.join(TWO_LINE); //body를 하나의 문자열로 변환

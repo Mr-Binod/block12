@@ -56,7 +56,7 @@ if {  // 블록 스코프 중괄호(middle or curly bracket)
 }
 console.log(a);
 
-// {} : 중괄호열고 닫고의 사이 영역이 블록 스코프
+// {} : 중괄호열고 닫고의 상위위 영역이 블록 스코프
 if(true){
     let a = 10;
     console.log(a);

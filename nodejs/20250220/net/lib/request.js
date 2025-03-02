@@ -32,7 +32,7 @@ const getQuery = (queryString) => {
 
 // 요청 데이터의 시작 라인 추출 할 함구
 const getStartLine = (startLineString) => {
-    // GET/shop HTTP/1.1
+    // GET /shop HTTP/1.1
     // [GET, /shop, HTTP/1.1]
     const startLine1 = startLineString.split(SPACE); //converts string into array
     // [["method", "GET"], ["url", "/shop"], ["version", "HTTP/1.1"]] 
@@ -85,18 +85,20 @@ const getHeaders = (headerString) => {
     // 줄마다 배열의 구분으로 추가해서 배열의 요소는 한줄한줄 하나의 요소로 포함된다
     // shift는 배열에서 첫번째 요소를 내보낸다
     const startLineString = headerLine.shift();
-    console.log(headerLine);
+    console.log(headerLine, "headerline1");
     const startLine = getStartLine(startLineString);
     console.log(startLine);
     // 헤더의 가장 중요한 메시지는 첫번째 라인
     // console.log(headerLine);
     // Header의 남어지 값을 객체로 변환
-    const headers = headerLine.reduce((acc, line,) => {
-        const [key, value] = line.split(": ");  //'Host: localhost:3000',  ["Host", "localhost:3000"]
+    const headers = headerLine.reduce((acc, line) => {
+        const [key, value] = line.split(": ");  
+        //'Host: localhost:3000',  ["Host", "localhost:3000"]
         acc[key] = value;
+        console.log(acc, "accc1")
         return acc;
     },{})
-    console.log(headers);
+    console.log(headers,"headers1");
     // 여러개의 값을 내보내는 경우
     return {
         startLine, headers
@@ -133,7 +135,7 @@ const getRequest = (buffer) => {
 
 // { request : { getHeaders }}
 
-getRequest(buffer);
+// getRequest(buffer);
 
 exports.request = { getRequest };
 
@@ -142,5 +144,5 @@ exports.request = { getRequest };
 
 
 
-const a1 = ["hello", hi]
-const a  = {helloo : "hi"}
+// const a1 = ["hello", hi]
+// const a  = {helloo : "hi"}

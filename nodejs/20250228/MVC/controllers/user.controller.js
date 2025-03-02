@@ -8,6 +8,7 @@
 
 const { log } = require('console');
 const User = require('../models/user');
+// User = {signupUser, selectUser, selectUserId};
 
 const signup = (req, res) => {
     // 미들웨어로 
@@ -24,7 +25,6 @@ const signup = (req, res) => {
     // const isSign= User.selectUserId(uid) // 중복된 값이 없으니
     console.log(isSign); // true [] 니까
     if(!isSign) {
-
         User.signupUser(uid, upw);
         res.redirect('/user/login'); // 회원가입 완료 되면 로그인 페이지로
     }
@@ -40,6 +40,8 @@ const login = (req, res) => {
     //  {uid : "soon", upw : "123"}
     console.log("hiii")
     const [isLogin] = User.selectUser(uid, upw);
+    // { uid: '1', upw: '1' } islogin = [ { uid: '1', upw: '1' } ] hhh
+    console.log(isLogin, "islogin")
 
     // uid 랑 upw
     if(isLogin) {
@@ -49,5 +51,7 @@ const login = (req, res) => {
         res.send("아이디 비밀번호 확인하세요")
     }
 }
+
+
 
 module.exports = { signup, login };

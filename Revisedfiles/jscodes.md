@@ -206,3 +206,60 @@ const getQuery = (queryString) => {
     // {index : 1, age : 20}
     return query3;
 }
+
+
+
+onclick = (e => e.target.value === a)
+onclick = (e) => {return e.target.value === a}
+
+learn class and array 
+
+// 쿼리 문자열 파싱
+const getQuery = (queryString) => {
+    if(queryString.length === 0) return null;
+    // index=1&age=20
+    const query = queryString.split("&");
+    // index [index=1, age=2]
+    const query2 = query.map((value) => value.split("="))
+    console.log(query2, "query")
+    // [ [ 'index', '1' ], ['age', '20'] ] query
+    const query3 = query2.reduce((acc, line) => {
+        const [key, value] = line;
+        acc[key] = value;
+        return acc;
+    }, {})
+    // {index : 1, age : 20}
+    return query3;
+}
+
+
+
+
+
+const a = [{a : "a"}];
+const a1 = {a : "abc", b : 123};
+const a2 = [["a", 1], ["b", 2]]
+
+
+const A2 = a2[0];
+const [b] = a;
+console.log(b)
+
+const shallowcopy = [{...a1}, [...a2]]
+const [indexshallowcopy] = shallowcopy;
+console.log(shallowcopy[0])
+console.log(shallowcopy[1])
+console.log(indexshallowcopy, "indexshallowcopy")
+
+const j = JSON.stringify(a1);
+const J = JSON.parse(j);
+// j.b = 3;
+J.b = 3;
+console.log(j);
+console.log(J);
+
+const [[A3],[A4]] = a2;
+console.log(A2)
+console.log(A3, "A3")
+console.log(A4, "A4")
+// console.log(A5, "A5")
