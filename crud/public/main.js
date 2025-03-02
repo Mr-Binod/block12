@@ -83,6 +83,7 @@ searchsubject.onkeyup = (e) => {
 }
  
 
+
 const init = () => {
     Data = JSON.parse(localStorage.getItem("comment")) || [];
     paginationcontent(0);
@@ -92,3 +93,101 @@ const init = () => {
 }
 init()
 console.log(Data)
+
+
+let index = 0;
+let start;
+let {length} = document.querySelectorAll(".swiper");
+let swiper = document.querySelector(".swiper")
+imgcontent.onmousedown = (e) => {
+    e.stopPropagation();
+    start = e.clientX;
+    console.dir(e, e.stopPropagation())
+    console.log(start, "start")
+}
+imgcontent.onmouseup = (e) => {
+    console.log("hi")
+    if(start > e.clientX) {
+        if(length -1 > index) {
+            index++;
+            console.log(index, 'onmouse')
+            swipeMove();
+        }
+    }
+    else {
+        if(index > 0)
+            index--;
+            swipeMove();
+    }
+}
+
+const swipeMove = () => {
+    let swiperWidth = parseInt(getComputedStyle(swiper).width);
+    console.log("width", swiperWidth, index, "index")
+    imgul.style.left = `${-(index * swiperWidth)}px`;
+}
+
+const initialMove = () => {
+    index = 1;
+    imgcontent.style.transition = "initial";
+    swipeMove();
+}
+
+const finalMove = () => {
+    index = 3;
+    imgcontent.style.transition = "initial";
+    swipeMove();
+}
+
+imgcontent.ontransitionend = () => {
+    if((length -1) === index){     
+        initialMove();
+        setTimeout(() => {
+            imgul.style.transition = '1s';
+        },100)
+    }
+    if(length - 4  === index) {
+        
+        finalMove();
+        setTimeout(() => {
+            imgul.style.transition = `1s`;
+        }, 100);
+    }
+} 
+
+next.onclick = () => {
+    if(index < length - 1){
+        index++;
+        console.log("next")
+        swipeMove();
+    }
+    else {
+        initialMove();
+    }
+}
+prev.onclick = () => {
+    if(index > 0){
+        index--;
+        console.log("prev")
+        swipeMove();
+    }
+    else {
+        finalMove();
+    }
+}
+
+
+window.onscroll = () => {
+    const scroll = window.scrollY;
+    if(scroll > 50) {
+        console.log(scroll)
+        scrollwrap.classList.add("isactive")
+        console.log("hi")
+    }
+    else {
+        scrollwrap.classList.remove("isactive")
+    }
+}
+
+
+

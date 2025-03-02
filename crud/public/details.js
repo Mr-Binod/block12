@@ -45,17 +45,17 @@ const render = () => {
         Popup.append(comment, comment1);
         Popcontent.append(Popup);
      
-        const setOpen = (Wrap) => {
-            if(Wrap.classList.contains("isactive")) {
+        const setOpen = (DetailsWrap) => {
+            if(DetailsWrap.classList.contains("isactive")) {
                 
-                Wrap.classList.remove("isactive");
+                DetailsWrap.classList.remove("isactive");
             }
             else {
-                Wrap.classList.add("isactive");
+                DetailsWrap.classList.add("isactive");
             }
             
         }
-        setOpen(Wrap);
+        setOpen(DetailsWrap);
         confirm.onclick = () => {
             
             Data.splice(index, 1);
@@ -68,10 +68,10 @@ const render = () => {
                 localStorage.setItem("comment", JSONData);
               
             }
-            setOpen(Wrap);
+            setOpen(DetailsWrap);
         }
         cancel.onclick = () => {
-            setOpen(Wrap);
+            setOpen(DetailsWrap);
             return;
         }
     }

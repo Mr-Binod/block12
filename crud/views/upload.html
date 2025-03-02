@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div id="Wrap">
+    
         <div id="Title">
             <ul class="titleUl">
-                <li id="Home">HOME</li>
+                <li id="Home">MAEIL</li>
                 <div id="searchBar">
                     <input type="text" id="searchsubject">
                     <span><i class="fa fa-search"></i></span>
@@ -28,37 +28,37 @@
             
         </div>
     
-   
-    <div id="Upload1">
+    <div id="Wrapupload"> 
+        <div id="Upload1">
 
-        <form id="UploadWrap">
-            <div id="UploadContent">
-                <div id="uploadtitlE">추가 페이지</div>
-                <div id="UploadUid">
-                    <label for="">작성자 : </label>
-                    <input type="text" id="userid" name="Userid">
+            <form id="UploadWrap">
+                <div id="UploadContent">
+                    <div id="uploadtitlE">추가 페이지</div>
+                    <div id="UploadUid">
+                        <label for="">작성자 : </label>
+                        <input type="text" id="userid" name="Userid">
+                    </div>
+                    <div id="UploadDate">
+                        <label for="">작성일 : <span id="DatE"></span></label>
+                        
+                    </div>
+                    <div id="UploadSubject">
+                        <label for="">제목</label>
+                        <input type="text" id="Subject" name="Inputsubject">        
+                    </div>
+                    <div id="UploadDetails">
+                        <label for="">글 내용</label> <br>
+                        <textarea type="text" id="Details" name="Inputdetails"></textarea>
+                    </div>
+                    <div id="Btn">
+                        <button id="Cancel" type="button">취소</button>
+                        <button id="Save">저장</button>
+                    </div>
                 </div>
-                <div id="UploadDate">
-                    <label for="">작성일 : <span id="DatE"></span></label>
-                    
-                </div>
-                <div id="UploadSubject">
-                    <label for="">제목</label>
-                    <input type="text" id="Subject" name="Inputsubject">        
-                </div>
-                <div id="UploadDetails">
-                    <label for="">글 내용</label> <br>
-                    <textarea type="text" id="Details" name="Inputdetails"></textarea>
-                </div>
-                <div id="Btn">
-                    <button id="Cancel" type="button">취소</button>
-                    <button id="Save">저장</button>
-                </div>
-            </div>
-            
-        </form>
-    </div>
-        
-    </body>
+                
+            </form>
+        </div>
+    <div>    
+</body>
 <script src="../public/upload.js"></script>
 </html>
