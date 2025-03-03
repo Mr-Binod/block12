@@ -5,6 +5,8 @@
 // const router = express()
 
 const router = require('express').Router();
+// const router1 = require('express');
+// const router = router1();
 
 router.get("/", (req, res) => {
     res.render("board")

@@ -232,8 +232,10 @@ IP : internet protocol
 세분화 : segmentation
 정의로 : by justice
 인련의 : series
-
-
+기호 : sign
+자원 : resource
+향상 : improvement
+구조화 : structured
 --------------20250224-------
 
 깊은 복사 : 주소를 참조한다.. deep copy
@@ -252,4 +254,4 @@ there will be circular refrence error
 
 server   require(./board)
 board    require(./server)  
-#### 순환참조 발생한다 : circular reference #### !important
+#### 순환참조 발생한다 : circular dependencies error #### !important
