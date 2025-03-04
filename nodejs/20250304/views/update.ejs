@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/update?index=<%= index %>" method="post" enctype="multipart/form-data">
+        <label for="">제목</label>
+        <input type="text" name="title">
+        <label for="">내용</label>
+        <input type="text" name="content">
+        <label for="">이미지 파일</label>
+        <input type="file" name="myimage">
+        <button>저장</button>
+        <!-- <img src="" alt=""> -->
+    </form>
+</body>
+</html>
