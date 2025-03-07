@@ -1,0 +1,47 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <style>
+        div {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <h1>메인 페이지</h1>
+    <div>
+        <form action="/login" method="post">
+            로그인 <br>
+            <label for="">이름</label> <br>
+            <input type="text" name="uid"><br>
+            <label for="">이름</label> <br>
+            <input type="text" name="upw"><br>
+            <button>로그인</button>
+        </form> <br>
+
+        <form action="/signup" method="post">
+            회원가입 <br>
+            <label for="">이름</label> <br>
+            <input type="text" name="uid"><br>
+            <label for="">이름</label> <br>
+            <input type="text" name="upw"> <br>
+            <button>화원가입</button>
+        </form>
+
+    </div>
+    
+</body>
+<script>
+    const submitHandler = (e) => {
+        e.preventDefault();
+        
+    }
+</script>
+</html>
