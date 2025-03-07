@@ -206,13 +206,20 @@ const getQuery = (queryString) => {
     // {index : 1, age : 20}
     return query3;
 }
-
+const userInput = prompt("Please enter your name:");
+if (userInput !== null) {
+alert("Hello, " + userInput + "!");
+} else {
+alert("You canceled the input.");
+}
 
 
 onclick = (e => e.target.value === a)
 onclick = (e) => {return e.target.value === a}
 
 learn class and array 
+
+
 
 // 쿼리 문자열 파싱
 const getQuery = (queryString) => {
