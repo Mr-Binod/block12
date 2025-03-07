@@ -59,6 +59,7 @@ console.log(data);
 //     <li>이름</li>
 // </data->
 const render = () => {
+    
     for (let i = 0; i < data.length; i++) {
         // 글 갯수만큼 반복
         const ul = document.createElement("ul");
