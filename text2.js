@@ -8,6 +8,8 @@
     // //     if(index === "name")
     // // }
 
+const multer = require("multer");
+
     // // const httpPath = path.join(key, directory[index]).replaceAll("\\", "/")
 
 
@@ -58,3 +60,7 @@
 
 
     
+    exports.upload = multer({storage : multer.diskStorage({destination : () => {},
+        filename : () => {}, limits : {fileSize : 5 * 1024 * 1024}})})
+
+        // {destination, filename, limits}

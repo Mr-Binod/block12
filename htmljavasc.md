@@ -213,6 +213,7 @@ bind : bind is a process of
 상호작용 : interacting
 논리적인 연결 : logical connection
 응답 : response
+출처 : protocol
 HPPT : hyper text transfer protocol
 TCP : transmission control protocol
 UDP : user datagram protocol
@@ -255,3 +256,17 @@ there will be circular refrence error
 server   require(./board)
 board    require(./server)  
 #### 순환참조 발생한다 : circular dependencies error #### !important
+
+
+-------------------------------------20250305--------------------------------
+
+> 라이브러리를 공부하는 방법 가장 좋은 방법 공식문서를 참고 가장 베스트
+> 어떤 내용 공부해야하나 `메서드가 어떤 반환 값을 반환하는지`
+공식문서를 : official document
+
+주요 원칙 : key principle
+방안 : plan
+보안정책 : security
+
+원리 : priciple
+접점 : contact

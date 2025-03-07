@@ -232,7 +232,7 @@ const getQuery = (queryString) => {
     return query3;
 }
 
-
+onclick="location.href = '/main/<%= index %>'"
 
 
 

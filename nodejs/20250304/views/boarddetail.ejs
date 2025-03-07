@@ -15,14 +15,17 @@
         <%= board.title %>
         <%= board.content %>
         <img src="<%= board.imgPath %>" alt="">
-        <button >삭제</button>
+        <button onclick="Ondelete('<%= board.imgPath %>')">삭제</button>
         <button type="button" onclick="onclickUpdate('<%= index %>')">수정</button>
     </form>
 
 </body>
 <script>
     const onclickUpdate = (i) => {
-        console.log(i, "iiiiiiiiii")
+       
+        location.href = `update?index=${i}`
+    }
+    const Ondelete = (i) => {
         location.href = `update?index=${i}`
     }
 </script>

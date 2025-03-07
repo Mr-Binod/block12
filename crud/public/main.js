@@ -73,10 +73,12 @@ searchsubject.onkeyup = (e) => {
     let searchArr = [...Data].filter((el) => el.subject.startsWith(e.target.value));
     searchArr = searchArr.splice(0, 10); 
     if(e.keyCode === 13) {
-        console.log("enter")
+        console.log("enter");
+        searchscroll.href = "#contenT";
         render(searchArr, 0);
     }
     Searchbtn.onclick = () => {
+        searchscroll.href = "#contenT";
         render(searchArr, 0);    
         
     }
