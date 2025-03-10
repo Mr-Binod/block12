@@ -10,11 +10,11 @@ const app = express();
 
 app.use(express.urlencoded({extended : false}))
 app.use(express.json());
-app.use(cors({
-    origin : 'http://localhost:3000',
-    methods : ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials : true
-}))
+// app.use(cors({
+//     origin : 'http://localhost:3000',
+//     methods : ['GET', 'POST', 'PUT', 'DELETE'],
+//     credentials : true
+// }))
 
 // 요청을 보낼때 쿠키 값을 포함하려면 credentials 검증의 속성이 활성화 되어야한다
 
@@ -22,6 +22,7 @@ app.post('/login', (req, res) => {
     const {uid, upw} = req.body;
     console.log(uid, upw);
     const user = userFindUidUpw({uid, upw}); // [] undefined [12]
+    console.log(user, 'user')
     if(user) {
 
         res.send({state : 200, message : 'backend 로그인 성공', token : `${uid} code`})

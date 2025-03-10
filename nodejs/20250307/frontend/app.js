@@ -50,22 +50,20 @@ app.post('/signup', async (req, res) => {
 })
 app.post('/login', async (req, res) => {
     const {uid, upw} = req.body;
+    console.log(req.body, 'body')
     console.log(uid, upw)
-    const {data} = await axios.post('http://127.0.0.1:4000/login?index=1', {uid, upw})
+    const {data} = await axios.post('http://127.0.0.1:4000/login', {uid, upw})
     // 헤더에 쿠키의 값을 저장해라는 요청을 브라우저에서 응답
     // cookie 응답 헤더에 
-    res.cookie('login-token', data.token, {maxAge : 10 * 60 * 60 * 1000})
+    res.cookie('login-token', data.token, {maxAge : 10 * 60 * 60 * 1000, httpOnly : true})
+    console.log(data)
     // set cookei라는 헤더를 응답 메시지의 헤더로 추가
     // 쿠키 값을 생성 시킨다
     // httpOnly 요청과 응답 간에만 쿠키의 값을 사용할수 있는 속성 자바스크립트 제어
-    res.redirect('/');
+    // res.redirect('/');
+    res.send('hiii')
 })
 
-app.put('login', (req, res) => {
-    const {uid, upw} = req.body;
-    console.log(uid, upw)
-    res.send('hello')
-})
 
 app.listen(3000, () => {
     console.log('front server on~');

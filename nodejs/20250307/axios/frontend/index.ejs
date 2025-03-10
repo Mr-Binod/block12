@@ -7,22 +7,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <h1>로그인 페이지</h1>
-    <!-- <form id="loginForm" action="http://127.0.0.1:4000/login" method="post"> -->
-    <form id="loginForm">
-        <label for="">아이디</label>
+    <form id="loginForm" action="">
         <input type="text" name="uid">
-        <label for="">비밀번호</label>
         <input type="text" name="upw">
-        <button> 로그인</button>
+        <button>login</button>
     </form>
-
 </body>
 <script>
-    const submitHandler = async (e) => {
+   const submitHandler = async (e) => {
         e.preventDefault();
         const {uid : {value : uidValue}, upw : {value : upwValue}} = e.target;
         await axios.post('/login', {uid : uidValue, upw : upwValue},
@@ -34,6 +29,6 @@
         // location.href = '/signup';
         // axios.put, axios.delete
         }
-    loginForm.onsubmit = submitHandler; // 함수를 전체 반환한다 리턴 값이 없어서
+    loginForm.onsubmit = submitHandler;
 </script>
 </html>

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <style>
         div {
             display: flex;
@@ -17,12 +17,13 @@
 <body>
     <h1>메인 페이지</h1>
     <div>
-        <form action="/login" method="post">
+        <!-- <form action="/login" method="post" id="loginBtn"> -->
+        <form id="loginBtn">
             로그인 <br>
             <label for="">이름</label> <br>
-            <input type="text" name="uid"><br>
+            <input type="text" name="uid1"><br>
             <label for="">이름</label> <br>
-            <input type="text" name="upw"><br>
+            <input type="text" name="upw1"><br>
             <button>로그인</button>
         </form> <br>
 
@@ -31,17 +32,42 @@
             <label for="">이름</label> <br>
             <input type="text" name="uid"><br>
             <label for="">이름</label> <br>
+            <input type="text" name="uid"><br>
+            <label for="">이름</label> <br>
             <input type="text" name="upw"> <br>
             <button>화원가입</button>
         </form>
+        <form id="Edit">
+            회원가입 <br>
+            <label for="">이름</label> <br>
+            <input type="text" name="uid2"><br>
+    
+            <button>수정</button>
+        </form>
+        <a href="/Del" id="Delbtn">삭제</a>
 
     </div>
     
 </body>
 <script>
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault();
-        
+        console.log(e.target.uid1.value)
+        const {uid1 : {value : Uidvalue}, upw1 : {value : Upwvalue}} = e.target;
+        console.log({uid : Uidvalue, upw : Upwvalue})
+        const index = await axios.post('/login', {uid : Uidvalue, upw : Upwvalue})
+        location.href = `/new?index=${index}`;
     }
+    loginBtn.onsubmit = submitHandler;
+    const submitHandler1 = async (e) => {
+        e.preventDefault();
+        console.log(e.target.uid2.value)
+        const {uid2 : {value : Uidvalue}, upw2 : {value : Upwvalue}} = e.target;
+        const Data = await axios.put('/edit', {uid : Uidvalue, upw : Upwvalue}, {withCredentials : true})
+        // location.href = '/edit';
+        console.log(Data)
+    }
+    Edit.onsubmit = submitHandler1;
+    
 </script>
 </html>

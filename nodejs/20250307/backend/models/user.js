@@ -18,11 +18,13 @@ const userFindUid = ({uid}) => {
 
     const [data] = user.filter((el) => el.uid ===uid)
     // let arr = [1, 2]
+    console.log([data], 'filterdata')
     return data
 }
 
 const userFindUidUpw = ({uid, upw}) => {
     const [data] = user.filter((el) => (el.uid === uid) && (el.upw === upw))
+    console.log(typeof(data), 'daa')
     return data
 }
 
