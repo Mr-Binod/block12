@@ -16,10 +16,27 @@ const userFindUid = ({uid}) => {
     //     return true
     // })
 
-    const [data] = user.filter((el) => el.uid ===uid)
+    const [data] = user.filter((el) => el.uid === uid)
     // let arr = [1, 2]
-    console.log([data], 'filterdata')
+    console.log(data, 'filterdata')
     return data
+}
+
+const Updateid = ({uuid, token}) => {
+    const [data] = user.filter((el, index) => {
+        if(el.uid === token) {
+            console.log('hi', el.uid, index)
+            user[index].uid = uuid;
+        
+        }
+        else {
+            return ('none')
+        }
+
+    })
+    console.log(user, 'user');
+    
+
 }
 
 const userFindUidUpw = ({uid, upw}) => {
@@ -43,4 +60,4 @@ const userCreate = (_user) => {
     user.push(_user)
 }
 
-module.exports = {userCreate, userFindUid,userSelectAll, userSelectIndex, userFindUidUpw}
+module.exports = {Updateid, userCreate, userFindUid,userSelectAll, userSelectIndex, userFindUidUpw}

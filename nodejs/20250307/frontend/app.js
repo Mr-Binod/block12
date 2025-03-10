@@ -23,6 +23,14 @@ app.get('/', (req, res) => {
     res.render('main');
 })
 
+app.get('/details', (req, res) => {
+    const cookie = req.headers.cookie;
+    const token = cookie.split('=')[1].split('%')[0];
+    // const entoken = encodeURIComponent(token);
+    console.log(token, 'token');
+    res.render('details', {token});
+})
+
 app.get('/login', (req, res) => {
     
     res.render('login');
@@ -64,6 +72,14 @@ app.post('/login', async (req, res) => {
     res.send('hiii')
 })
 
+app.put('/details', async (req, res) => {
+    const cookie = req.headers.cookie;
+    const token = cookie.split('=')[1].split('%')[0];
+    const {uuid} = req.body;
+    console.log(uuid, 'uuid', token);
+    await axios.put('http://127.0.0.1:4000/details', {uuid, token})
+    res.send('ok');
+})
 
 app.listen(3000, () => {
     console.log('front server on~');

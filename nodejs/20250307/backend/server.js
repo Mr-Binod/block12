@@ -5,7 +5,7 @@
 const express = require('express');
 const cors = require('cors');
 const {signup} = require('./controllers/user.controller');
-const { userFindUidUpw } = require('./models/user');
+const { userFindUidUpw, Updateid } = require('./models/user');
 const app = express();
 
 app.use(express.urlencoded({extended : false}))
@@ -35,6 +35,14 @@ app.post('/signup', async (req, res) => {
     const data = await signup(req);
     res.send(data);
 } )
+
+app.put('/details', (req, res) => {
+    console.log(req.body, 'body')
+    const {uuid, token} = req.body;
+    const uuser = Updateid({uuid, token});
+    console.log (uuser, 'uuser');
+    res.send({state : 200, message : 'completed'})
+})
 
 app.listen(4000, () => {
     console.log('backend server on~')

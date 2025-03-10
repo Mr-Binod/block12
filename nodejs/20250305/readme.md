@@ -9,7 +9,7 @@
 > 요청과 응답의 주제를 자바스크립트 로직으로 처리를 하게 자바스크립트 로직을 작성
 
 ### AJAX    
-> 초기에 웹피이지에서는 모등 데이터를 받아서 처리하고, 페이지의 새로고침 없이 데이터를 화면에 보여주기는 불가능했다. 데이터를 가지고
+> 초기에 웹피이지에서는 모든 데이터를 받아서 처리하고, 페이지의 새로고침 없이 데이터를 화면에 보여주기는 불가능했다. 데이터를 가지고
 따로 페이지 새로고침 없이 사용자의 UI 를 보여주는데 무리가 있다.
 > 데이터를 응답받아서 새로고침 없이 화면을 구성할수 있는 기술을 개발하기 시작
 > XMLHttprequest 라는 객체를 만들었고 ajax 라는게 탄생 페이지를 새로고침하지 않아도 서버에서 데이터를 주고 받을수 있게 되었다
@@ -69,20 +69,21 @@ async function myfn () {
 }
 async function myfn () {
     // 기본적으로 옵셩 객체이 메서드 작성안하면 method : GET
-    const data = await fetch("http://127.0.0.1:3000/create", {method : "POST", headers : {"content-type" : "application/json"},
+    const data = await fetch("http://127.0.0.1:3000/create", 
+        {method : "POST", headers : {"content-type" : "application/json"},
         body : JSON.stringify({title : "제목", content : "내용"})})
-    // response 상태 코드의 내용ㅇ도 포함되는 응답의 내용을 가지고 있는 객체
-    const data = await response.json();
-    return data;
+        // response 상태 코드의 내용ㅇ도 포함되는 응답의 내용을 가지고 있는 객체
+        const data = await response.json();
+        return data;
 }
 ```
 
 
 ### Axios 외부 라이브러리
 > Fetch 는 API 요청을 보낼때 Ajax보다는 좀더 직관적이고 모던한 메서드를 제공하지만
-> 오류 처리할때 catch() 라던지 처리가 잘 되비않는 문제가 있고 파싱하는 작업도 불편하다
-> JSON (intersecr nestjs) 파싱이라던지 명시적으로 JSON 파싱작업은 기본적으로 사용해야되는데
-우리기 직접 명시해서 코드를 작성을 해줘야하ㅡㄴㄴ 불편함 등
+> 오류 처리할때 catch() 라던지 처리가 잘 되지않은 문제가 있고 파싱하는 작업도 불편하다
+> JSON (intersect nestjs) 파싱이라던지 명시적으로 JSON 파싱작업은 기본적으로 사용해야되는데
+우리기 직접 명시해서 코드를 작성을 해줘야하는 불편함 등
 > 요청을 보내거나 응답을 받아서 처리하는 과정에서 데이터를 조작하는 방법이 없다(인터셉터 기능)
 > Axios는 fetch 의 단점을 보안해서 개발한 promise 기반 http 요청의 클라이언트
 
@@ -159,7 +160,7 @@ foo();
 
 ## CORS
 > CORS 는 웹의 보안정책들 중에서 하나로 웹 어플리케이션의 리소스를 접근할때 발생하는 보안의 이슈로 제어하기위한 정책을 해결하기 위한 방안이다. 
-> 쉽게 말해서 보안은 유지하뒤 요청과 응답간에 서로 다른 도메인의 서버여도 리소스의 접근이 가능하게
+> 쉽게 말해서 보안은 유지한뒤 요청과 응답간에 서로 다른 도메인의 서버여도 리소스의 접근이 가능하게
 > 보안정책은 same-origin-policy  동일한 출처 정책
 
 <!-- www.naver.com ==> 프론트 서버 -->

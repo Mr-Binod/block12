@@ -11,7 +11,7 @@
 방식을 사용하게되었다.
 
 > 파일 업로드를 할때 content-type 이 multipart/form-data인지 확닝해서 파일을 처리한다
-> 데이트에 업로드한 파일의 차싱 내용도 요청 객체에 생성한다
+> 데이트에 업로드한 파일의 차식 내용로 요청 객체에 생성한다
 
 req.body.multipart/form-data
 
@@ -73,7 +73,7 @@ const sotrage = multer.diskStorage({
         // 저장경로가 img/안녕
         // <img src="img/안녕.png">
         // 원본 파일 이름에서 확장자명만 잘라오자.
-        cb(null, file.fieldname + "_" + Date.now() + )
+        cb(null, file.feildname + "_" + Date.now() + )
 
 
         // 안녕  
