@@ -36,10 +36,10 @@ app.post('/signup', async (req, res) => {
     res.send(data);
 } )
 
-app.put('/details', (req, res) => {
+app.put('/details', async (req, res) => {
     console.log(req.body, 'body')
     const {uuid, token} = req.body;
-    const uuser = Updateid({uuid, token});
+    const uuser = await Updateid({uuid, token});
     console.log (uuser, 'uuser');
     res.send({state : 200, message : 'completed'})
 })

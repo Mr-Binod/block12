@@ -22,19 +22,21 @@ const userFindUid = ({uid}) => {
     return data
 }
 
-const Updateid = ({uuid, token}) => {
-    const [data] = user.filter((el, index) => {
+const Updateid = async ({uuid, token}) => {
+    const [data] = await user.filter((el, index) => {
         if(el.uid === token) {
             console.log('hi', el.uid, index)
             user[index].uid = uuid;
-        
+            // console.log(user[index], 'hi')
+            return user[index];
         }
         else {
-            return ('none')
+            return ('none');
         }
 
     })
-    console.log(user, 'user');
+    console.log(user, 'user', data, 'data');
+    return data
     
 
 }

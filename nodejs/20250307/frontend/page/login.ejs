@@ -25,15 +25,22 @@
     const submitHandler = async (e) => {
         e.preventDefault();
         const {uid : {value : uidValue}, upw : {value : upwValue}} = e.target;
-        await axios.post('/login', {uid : uidValue, upw : upwValue},
+        const {data} = await axios.post('/login', {uid : uidValue, upw : upwValue},
         {withCredentials : true} // withCredentials browser의 크키값을 요청보낼때 포함 시킬지
         // await axios.post('http://127.0.0.1:4000/login', {uid : uidValue, upw : upwValue},
             // 응답 헤거에 있으면 브라우저에 쿠키 추가
             //  withCredentials 요청 헤더에 credentials 가 포함된다
         )
         console.log('응답 완료');
-        location.href = '/details';
+        // location.href = '/details';
         // axios.put, axios.delete
+        console.log(data, 'data');
+        if(data.state === 200) {
+            location.href = "/details"
+        }
+        else {
+            alert('아니디와 비밀번호 확인해주세요')
+        }
         }
     loginForm.onsubmit = submitHandler; // 함수를 전체 반환한다 리턴 값이 없어서
 </script>
