@@ -1,0 +1,33 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('header') %>
+    detail page
+    <span><%= index %></span>
+    <form id="edit">
+        <label for="">내용 :</label> <br>
+        <textarea name="Textarea" id=""></textarea> <br>
+        <button >수정</button>
+        <button type="button" id="Delete">삭제</button>
+    </form>
+</body>
+<script>
+    edit.onsubmit = async (e) => {
+        e.preventDefault();
+        const {Textarea : {value : textvalue}} = e.target;
+        console.log( textvalue, 'textvalue')
+        const {data} = await axios.put('/details', {textvalue , index : '<%= index %> '});
+        console.log(data, 'view page')
+    }
+    Delete.onclick = async (e) => {
+        const {data} = await axios.delete('/delete', {index : '<%= index %> '});
+    }
+</script>
+</html>

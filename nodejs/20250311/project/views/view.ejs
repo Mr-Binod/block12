@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+    <%- include('header') %>
+    create page
+    <% for(let i = 0; i < data.length; i++) { %>
+        <div class="detailpage" >
+            <div>제목 : <%= data[i].title %></div>
+            <div>내용 : </div>
+            <textarea name="" id="" disabled><%= data[i].content %></textarea>
+            
+        </div>
+    <% } %>
+</body>
+<script>
+    const page = document.querySelectorAll('.detailpage');
+    console.log(page, 'page')
+    for (let i = 0; i < page.length; i++) {
+        
+        page[i].onclick = (e) => {
+            console.log('hi')
+            location.href = `/details?index=${i}`;
+        }
+    }
+</script>
+</html>
