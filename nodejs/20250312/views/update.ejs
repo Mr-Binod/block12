@@ -1,0 +1,44 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('header') %>
+    <form action="" id="updateform">
+        <label for="">nickname</label>
+        <input type="text" name="nid">
+        <button>update</button>
+        <button type="button" id="Del">delete</button>
+    </form>
+</body>
+<script>
+    updateform.onsubmit = async (e) => {
+        e.preventDefault();
+        const {nid : {value : nidvalue}} = e.target;
+        const data = await axios.put('/update', {nid : nidvalue});
+        if(data.state === 200) {
+            console.log('done')
+        }
+        else {
+            console.log('error')
+        }
+    }
+    Del.onclick = async (e) => {
+        const data = await axios.delete('/delete');
+        if(data.state === 200) {
+            console.log('done')
+        }
+        else {
+            console.log('error')
+        }
+    }
+</script>
+</html>
