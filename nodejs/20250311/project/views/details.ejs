@@ -27,7 +27,7 @@
         console.log(data, 'view page')
     }
     Delete.onclick = async (e) => {
-        const {data} = await axios.delete('/delete', {index : '<%= index %> '});
+        const {Data} = await axios.delete('/delete?index=<%= index %>');
     }
 </script>
-</html>
+</html>                      

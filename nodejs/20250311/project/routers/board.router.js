@@ -51,8 +51,8 @@ router.put('/details', async (req, res) => {
 router.delete('/delete', async (req, res) => {
     
     try {
-        const {index} = req.body;
-        console.log('delete', index, req.body)
+        const {index} = req.query;
+        console.log('delete', index, req.query)
         await deleteboard(index);
         res.json({state : 200, message : '삭제 완료'})
     } catch (error) {

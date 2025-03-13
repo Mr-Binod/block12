@@ -63,12 +63,15 @@ exports.update = async (title, index) => {
 }
 
 exports.Deleteboard = async(index) => {
-    
-    const Del = `DELETE FROM user WHERE id=${index};`;
+    const Del = `DELETE FROM board WHERE id=${index};`;
+    const setIndex = 'SET @CNT = 0; UPDATE user SET user.id = @CNT:=@CNT+1;'; // id index 재할당  1,2,3, 5 추가할때 문제가 있다
+    const resetIndex = 'ALTER TABLE user AUTO_INCREMENT = 0;'; 
+
     return await new Promise((res, rej) => {
-        mysqlconnect.query(Del, (err) => {
-            if(err) return rej(err);
-            res('삭제 완료')
+        mysqlconnect.query(Del, setIndex, resetIndex, (err) => {
+            console.log(index,'iii')
+            if(err) return console.log(err); //rej(err);
+            console.log('삭제 완료')
         })
     })  
 }

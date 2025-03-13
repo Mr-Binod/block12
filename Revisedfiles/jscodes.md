@@ -199,8 +199,8 @@ const getQuery = (queryString) => {
     console.log(query2, "query")
     // [ [ 'index', '1' ], ['age', '20'] ] query
     const query3 = query2.reduce((acc, line) => {
-        const [key, value] = line;
-        acc[key] = value;
+        const [key, value] = line; // = ['index', '1']
+        acc[key] = value;  // {}['index'] = '1';
         return acc;
     }, {})
     // {index : 1, age : 20}

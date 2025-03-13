@@ -270,3 +270,13 @@ board    require(./server)
 
 원리 : priciple
 접점 : contact
+향상 : improvement 
+코드의 구조화 : code structure
+관련 : relation, connection, relevant, associate
+제어 : control
+극복 : overcome
+조작 : manipulation
+정책 : policy
+출처 : source
+악성 : malicious (intending or intended to do harm.)
+인해 : due to

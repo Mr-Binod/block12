@@ -28,7 +28,7 @@ const Updateid = async ({uuid, token}) => {
             console.log('hi', el.uid, index)
             user[index].uid = uuid;
             // console.log(user[index], 'hi')
-            return user[index];
+            // return user[index];
         }
         else {
             return ('none');

@@ -48,3 +48,6 @@ b = b.toString(2).padStart(8, "0"); // 2 진수 8 bit 으로 변환
 client.setEncoding("utf8");
 
 const temp = parseInt(binary.substr(i, 8), 2)
+
+
+// app.set("views", path.join(__dirname, "page"));
