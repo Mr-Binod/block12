@@ -66,3 +66,5 @@ DROP USER 'myid'@'localhost';
  SELECT user, host FROM mysql.user; -- from 어디에서 값을 조회할거냐?
 -- use mysql;
 -- user 라는 테이블 접근
+
+SELECT user, host From mysql.user

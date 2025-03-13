@@ -1,0 +1,33 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+</head>
+<body>
+    <%- include('header') %>
+    <form id="loginform">
+        <label for="">id</label><br>
+        <input type="text" name="uid"><br>
+        <label for="">password</label><br>
+        <input type="text" name="upw"><br>
+        <button>login</button>
+    </form>
+</body>
+<script>
+    loginform.onsubmit = async (e) => {
+        e.preventDefault();
+        const {uid : {value : uidvalue}, upw : {value : upwvalue}} = e.target;
+        const {data} = await axios.post('/login', {uid : uidvalue, upw : upwvalue});
+        console.log(data)
+
+        if(data.state === 200) {
+            location.href = '/mypage';
+        }
+    }
+</script>
+</html>

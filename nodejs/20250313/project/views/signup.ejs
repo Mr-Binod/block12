@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <%- include('header') %>
+    <form id="signupform">
+        <label for="">name</label>
+        <input type="text" name="name">
+        <label for="">id</label>
+        <input type="text" name="uid">
+        <label for="">password</label>
+        <input type="text" name="upw">
+        <label for="">nickname</label>
+        <input type="text" name="nick">
+        <label for="">image</label>
+        <input type="file" name="image">
+        <button>signup</button>
+    </form>
+</body>
+<script>
+    signupform.onsubmit = async (e) => {
+        e.preventDefault();
+
+        const {uid, upw, name, nick, image} = e.target;
+        console.log(uid, upw, name, nick, image)
+        const form = new FormData();
+        // form 데이터의 객체의 형식을 생성
+        // append 키와 값을 추가 생성한 form 객체에 
+        form.append('uid', uid.value);
+        form.append('upw', upw.value);
+        form.append('name', name.value);
+        form.append('nick', nick.value);
+        form.append('image', image.files[0]);
+        const {data} = await axios.post('/signup', form, 
+            {header : {
+                'Content-Type' : 'multipart/form-data'
+            }})
+        console.log(data,' data')
+        if(data.state === 200) {
+            location.href = '/login';
+        }
+        else {
+            console.log(data.message)
+        }
+
+    }
+</script>
+</html>
