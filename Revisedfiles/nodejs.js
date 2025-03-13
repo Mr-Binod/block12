@@ -51,3 +51,25 @@ const temp = parseInt(binary.substr(i, 8), 2)
 
 
 // app.set("views", path.join(__dirname, "page"));
+
+
+
+
+const createSalt = () => {
+    return new Promise ((res, rej) => {
+        crypto.randomBytes(32, (err, result) => {
+            if(err) return rej(err)
+            res(result.toString('hex'));
+        })
+    })
+}
+
+const createHash = (upw, salt) => {
+    const data = crypto.pbkdf2Sync(upw, salt, 100000, 32, 'sha256')
+    console.log(data, data.toString('hex'))
+    return data.toString('hex');
+}
+
+const pwHash = bcrypt.hashSync(upw, 10);
+
+const passwordcheck = bcrypt.compareSync(upw, data.upw);

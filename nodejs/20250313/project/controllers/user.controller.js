@@ -21,14 +21,17 @@ const login = async (uid, upw) => {
         if(!data) return {state : 401, message : 'not found.'}
         const passwordcheck = bcrypt.compareSync(upw, data.upw);
         if(!passwordcheck) return ({state : 402, message : 'wrong password'})
+
         const {nick, imgpath} = data;
+    
         const jwttoken = jwt.sign({nick, imgpath}, process.env.TOKEN_KEY, {expiresIn : '10m'});
+
         console.log({state : 200, message : 'login successful', jwtoken : jwttoken})
         // {
         //     state: 200,
         //     message: 'login successful',
         //     jwtoken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuaWNrIjoiaGVsbG8iLCJpbWdwYXRoIjoiaW1nIiwiaWF0IjoxNzQxODQyNTIxLCJleHAiOjE3NDE4NDMxMjF9.Q8nIuTAu62lmuvtj-tRmFSqTUgxEi-SF2RarCcahfVs'
-        //   }
+        //  }
         return ({state : 200, message : 'login successful', user : {token : jwttoken, userdata : {nick, imgpath}}})
     } catch (error) {
         return error;
