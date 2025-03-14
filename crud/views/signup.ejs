@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('header') %>
+    <div id="signupwrap">
+
+        <form action="" id="signupform">
+            <ul id="signupul">
+                <li>
+                    <label for="">Name</label> <br>
+                    <input type="text" name="uname" id="">     
+                </li>
+                <li>
+                            
+                    <label for="">Nickname</label><br>
+                    <input type="text" name="nick" id="">
+                </li>
+                <li>
+                    <label for="">user id</label><br>
+                    <input type="text" name="uid" id="">
+                </li>
+                <li>
+                    <label for="">Password</label><br>
+                    <input type="text" name="upw" id="">
+                </li>
+                <li>
+                    <label for="">Retype Password</label><br>
+                    <input type="text" name="upw1" id="">
+                </li>
+                <li>
+                    <label for="">image</label><br>
+                    <input type="file" name="image" id="">
+                </li>
+                <li id="gender">
+                    <label for="">Gender</label> <br>
+                    <label for="male">male <input type="radio" name="gender" value="male" class="rgender"></label>
+                    <label for="female">female <input type="radio" name="gender" value="female" class="rgender"></label>
+                </li>
+                <li>
+
+                    <button>signup</button>
+                    <button type="button">cancel</button>
+                </li>
+            </ul>                                               
+        </form>
+    </div>
+    
+</body>
+<script>
+    signupform.onsubmit = async (e) => {
+        e.preventDefault();
+
+        const {uname, nick, uid, upw, upw1, gender, image} = e.target;
+
+        const form = new FormData();
+        form.append('uname', uname.value)
+        form.append('nick', nick.value)
+        form.append('uid', uid.value)
+        form.append('upw', upw.value)
+        form.append('upw1', upw1.value)
+        form.append('gender', gender.value)
+        form.append('image', image.files[0])
+
+        const {data} = await axios.post('/signup', form, {
+            header : {
+                'Content-type' : 'multipart/form-data'
+            }
+        })
+        console.log(data, 'ejs')
+        if(data.state === 200) {
+            location.href = '/login';
+        }
+        else {
+            const message = data.message;
+            location.href = '/error?message=' + message
+        }
+    }
+</script>
+</html>

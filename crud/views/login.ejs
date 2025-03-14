@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <%- include('header') %>
+    <div id="loginwrap">
+
+        <form action="" id="loginform">
+            <ul id="signupul">
+              
+                <li>
+                    <label for="">user id</label><br>
+                    <input type="text" name="uid" id="">
+                </li>
+                <li>
+                    <label for="">Password</label><br>
+                    <input type="text" name="upw" id="">
+                </li>
+              
+             
+                <li>
+
+                    <button id="Login">log in</button>
+                    <button type="button" id="Cancel">cancel</button>
+                </li>
+            </ul>                                               
+        </form>
+</body>
+<script>
+    loginform.onsubmit = async (e) => {
+        e.preventDefault();
+        console.log('asdf')
+        const {uid : {value : uidvalue}, upw : {value : upwvalue}} = e.target;
+        
+        const {data} = await axios.post('/login', {uid : uidvalue, upw : upwvalue})
+        if(data.state === 200) {
+            location.href = '/details'
+        }
+        else {
+            location.href = '/error?message='+ data.message
+        }
+    }
+</script>
+</html>

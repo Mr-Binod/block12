@@ -1,0 +1,1 @@
+create table crud(id int auto_increment primary key, uname varchar(15) not null, nick varchar(15) not null, uid varchar(15) not null, upw varchar(15) not null, imgpath varchar(100))
