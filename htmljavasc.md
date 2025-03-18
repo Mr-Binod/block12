@@ -99,17 +99,10 @@ name(); // 어휘적위치에 "안녕"`
 
 ``` ### 참조 타입의 싶은 복사 얕은 복사 ```
 
-- 얕은 복사 (`shallow copy`): 값을 복사하는 방식에서 참조타입의 값을 복사하는 방식  // spread operator(스프래드 연산자) 
-const data = [1, "hello", true]
-const data1 = {name : "moon", age : 25}
-`const b = [...data] ,const c = {...data1}`
-- 원시타입 (primitive type) : 불변성을 가지고 새로운 데이터가 재할당되면 이전의 주소를 새로운 겂의 주소를변경하고 이전 주소는 이후에 해제된다.
+얕은 복사 : 스택에 있는 변수의 주소를 복사하는 방식에서 복사 변수의 값이 바뀌면 
+    원본 값도 바꾼다.
 
-- 깊은 복사 (`deep copy`): 값을 복사하하는 방식에서 참조타입의 주소를 복사하는 방식
-`JSON.stringify(), JSON.parse()`
-- 참조타입 (reference type): 주소를 가르키는 주소의 값이 있고 값을 변경할때 heap 메모이에소 참조되고있는 주소의 값이 
-
-
+깊은 복사 : heap 메모리에서 새추소로 값이 복사하면 복사 변수랑 원본 변수의 관계가 없다.                                                                                                                                                                                                                                                                           
 <!--------------------------------20250114------------------------------------------>
 
 // 메모이제이션 시법 ****  // memo
@@ -120,7 +113,7 @@ const data1 = {name : "moon", age : 25}
 > 공장에서 상품을 만드는 기계같은 느낌
 > 자동차 객체 하나 생성
 재귀 함수 : recursive function
-> 자귀 함수는 함수의 내영에서 다시 함수 이름으로 함수의 내용안에서 실행되는것이 반복되는 방식
+> 자귀 함수는 함수가 내부에서 호출하고 반복 시키기 방식 
 직관적 : intuitive
 기능 : features
 경우 : case
@@ -265,7 +258,7 @@ board    require(./server)
 공식문서를 : official document
 
 주요 원칙 : key principle
-방안 : plan
+방성장안 : plan
 보안정책 : security
 
 원리 : priciple
@@ -280,3 +273,29 @@ board    require(./server)
 출처 : source
 악성 : malicious (intending or intended to do harm.)
 인해 : due to
+
+
+-------------------------------
+
+효율적 : efficient
+수강 신청 : attend application
+과목 : subjects
+과정명 : course name
+기호 : sign
+부서 : department
+제약 조건 : constrains restrictions
+기능 : features
+개념 : concept
+효과 : effect
+상영시간 : showtime
+목록 : inventory
+규칙적 : regular
+체계적 : systematic
+종적 : longitudinal
+신상정보 : personal information
+발전 : evolution
+단생 : birth
+설계 : design
+관계형 : relation
+제어 : control
+원칙 : principle
