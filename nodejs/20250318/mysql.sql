@@ -47,7 +47,9 @@ create table user_order(
     id int AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(20), 
     order_id VARCHAR(20), 
+    constraint fk__orser_id FOREIGN KEY (order_id) REFERENCES user (id),
     constraint fk__orser_id FOREIGN KEY (order_id) REFERENCES user (id)
+
     -- constrain 필드에서 제약조건으로 사용할 필드를 지정하고 외래키를 생성 REFERENCES 부모테이블의 어떤 키를 주시할거냐??
     )
 
@@ -77,6 +79,7 @@ insert into user_order (name, order_id) values ('자전거', 'kim');
 
 --- 관게성이 있는 테이블은 join 을 쓸만하지
 SELECT * FROM user left join user_order on user.id = user_order.order_id where user.id = 'kim';
+SELECT * FROM user left join user_order on user.id = user_order.order_id left join //'can be added'// where user.id = 'kim';
 
 SELECT user.id as user_id, user.name, user_order.order_id FROM user left join user_order 
 on user.id = user_order.order_id where user.id = 'kim';
@@ -102,6 +105,7 @@ on user.id = user_order.order_id where user.id = 'kim';
 
 3. 테이블에 필요한 필드 설계
 -- 필드들의 데이터타입을 어떻게 설계할지
+-- 
 
 4. 데이터베이스 생성
 -- 관계성 확인

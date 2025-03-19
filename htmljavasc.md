@@ -299,3 +299,15 @@ board    require(./server)
 관계형 : relation
 제어 : control
 원칙 : principle
+
+
+-----------------------------
+
+자료 : data 
+구조 : structure
+계정 : account
+해석 : analyse
+요구 : request
+저하 : lower
+탐색 : research, quest
+이진 : binary

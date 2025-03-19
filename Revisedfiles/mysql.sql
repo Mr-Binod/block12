@@ -111,3 +111,13 @@ client.id = shop.orderid where user.id = 'pak';
 SET @CNT = 0;
 UPDATE shop SET shop.id = @CNT:=@CNT+1;
 ALTER TABLE shop AUTO_INCREMENT = 0;
+
+
+
+create index indx_users_age on users (age);
+show index from users;
+-- btree 기반에 index 알고리즘으로 실행 됩니다
+-- mysql 의 외부 csv 파일은 지정된 접근 경로에 있는 파일을 업로드 할수 있다.
+show GLOBAL VARIABLES LIKE 'local_infile';
+SET GLOBAL local_infile=On;
+show VARIABLES LIKE 'secure_file_priv';
