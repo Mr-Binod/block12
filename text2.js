@@ -12,7 +12,6 @@ const multer = require("multer");
 
     // // const httpPath = path.join(key, directory[index]).replaceAll("\\", "/")
 
-
     // // const query2 = query.map((value) => value.split("="))
     // // const index = "index";
     // // const age = "age";

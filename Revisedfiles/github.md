@@ -30,7 +30,7 @@ git config --global user.name "blockSoon"
 git config --global user.email "blackorion3@gmail.com"
 git init 할때마다 작성할 필요가 없다 값이 없으면 글로벌에 작성된 내용을 사용
 git config init.defaultBranch main
-
+git push -u origin master
 
 git init
 git add .
@@ -97,6 +97,7 @@ git merge filename
 git rebase filename  # rebase 으로 merge 하고 hotfix 삭제할 하는 경우
 git add .
 git rebase --continue
+
 
 
 ```
