@@ -311,3 +311,6 @@ board    require(./server)
 저하 : lower
 탐색 : research, quest
 이진 : binary
+
+-------------------------------------20250324-------
+대규모 : large scale

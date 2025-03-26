@@ -1,0 +1,36 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+    <%- include('../common/header') %>
+    login page <br>
+    <form action="" id="loginform">
+        <label for="">uid</label>
+        <input type="text" name="uid">
+        <label for="">password</label>
+        <input type="text" name="upw">
+        <button>login</button>
+    </form>
+</body>
+<script>
+    loginform.onsubmit = async (e) => {
+        e.preventDefault();
+        const {uid : {value : uidvalue}, upw : {value : upwvalue}} = e.target;
+        const {data}  = await axios.post('/user/login', {uidvalue, upwvalue})
+        console.log(data.message, 'message')
+        if(data.state === 200) {
+            location.href = '/user/category'
+        }
+        else {
+            alert('check id and password')
+        }
+        location.reload();
+    }
+</script>
+</html>

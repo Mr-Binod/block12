@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+
+</head>
+<body>
+    추가 페이지지
+    <form action="" id="boardform"> 
+        <label for="">content</label>
+        <textarea name="textvalue" id=""></textarea>
+        <label for="">name</label>
+        <input type="text" name="username">
+        <button>submit</button>
+    </form>
+</body>
+<script>
+    boardform.onsubmit = async(e) => {
+        e.preventDefault();
+        const {textvalue : {value : contentvalue}, username : {value : usernamevalue}} = e.target;
+        const {data} = await axios.post('/board/create', {textvalue : contentvalue, username : usernamevalue})
+        if(data.state === 200) {
+            location.href = '/board';
+        }
+        else {}
+    }
+</script>
+</html>

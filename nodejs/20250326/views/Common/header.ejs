@@ -1,0 +1,53 @@
+
+
+
+<link rel="stylesheet" href="../public/style.css">
+<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+<ul class="header">
+    <li>
+        <a href="/">Home</a>
+    </li>
+    <li>
+        <a href="/user/login">login</a>
+    </li>
+    <li>
+        <a href="/user/signup">signup</a>
+    </li>
+    <li class="category1">
+        <a href="/admin/category1">category1</a>
+    </li>
+    <li >
+        <a href="/board">board</a>
+    </li>
+    <li class="loginicon">
+        <a href="/user/logout">logout</a>
+        <div><span class="username"></span>님 안녕하세요</div>
+    </li>
+
+</ul>
+
+<script>
+    const verify = async () => {
+        // 로딩창 활성화
+        const {data} = await axios.get('/user/Userverify')
+        // 로딩창 비활성화
+        console.log(data);
+        if(data.state !== 200) return;
+        const header = document.querySelector('.header');
+        const headerLi = header.querySelectorAll('li');
+        const loginicon = document.querySelector('.loginicon')
+        const loginiconname = loginicon.querySelector('.username')
+        console.log(headerLi)
+        headerLi.forEach((el,index) => {
+            if(index === 1 || index === 2) {
+                el.classList.add('display_none')
+                return;  
+            } 
+            loginicon.classList.add('active')
+            loginiconname.innerHTML = data.data.user.name;
+            if(data.data.user.grade === 2)
+            document.querySelector('.category1').classList.add('active');
+        });
+    }
+    window.onload = verify();
+</script>

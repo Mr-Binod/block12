@@ -270,3 +270,11 @@ console.log(A2)
 console.log(A3, "A3")
 console.log(A4, "A4")
 // console.log(A5, "A5")
+
+
+
+
+ // 객체에 ? 옵션 체이니 : 키값이 있으면 호출 없으면 접근 안한다 data?.dataValues.upw
+
+
+     const [data] = await Category.findAll({where : {name}, include : [Post]}) // include refers to left joining

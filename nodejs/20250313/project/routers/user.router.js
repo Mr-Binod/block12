@@ -60,7 +60,7 @@ router.post('/signup', upload.single('image'), async (req, res) => {
     console.log(uid, upw, name, nick)
     console.log(req.file)
     const {path} = req.file;
-    const data = await signup(uid,upw,name,nick,'/'+path)
+    const data = await signup(uid,upw,name,nick,'/'+path);
     console.log(uid, upw, name, nick)
     console.log(data, 'iii')
 })

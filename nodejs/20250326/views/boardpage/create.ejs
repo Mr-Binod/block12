@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+
+</head>
+<body>
+    게시글 작성
+    <form action="" id="boardform"><br>
+        <label for="">카태고리</label> 
+        <select name="category" id="">
+            <% for(let i = 0; i < data.length; i++) { %>
+                <option value="<%= data[i].name %>"><%= data[i].name %></option>
+                <% } %>
+        </select><br>
+        <label for="">제목</label><br>
+        <input type="text" name="title"><br>
+        <label for="">내용</label><br>
+        <input type="text" name="content">
+        <button>완료</button>
+    </form>
+</body>
+<script>
+    boardform.onsubmit = async (e) => {
+        e.preventDefault();
+        const {category : {value : categoryvalue}, title: {value : titlevalue}, content : {value : contentvalue}} = e.target;
+        const {data} = await axios.post('/board/create', {category : categoryvalue, title : titlevalue, content : contentvalue})
+        if(data.state === 200) {
+            // params : 리소스 종류 분류 즉 카태고리
+            // 검색 조겅은 쿼리스트링링
+            // location.href = '/board/detail/'+ categoryvalue +'/?index=1&select="name"'
+            // location.href = '/board/detail/'+ categoryvalue +'/?index=1&select="name"'
+        }
+    }
+</script>
+</html>

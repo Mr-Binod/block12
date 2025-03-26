@@ -1,0 +1,33 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../common/header') %>
+    <form action="" id="categoryform">
+        <label for="">name</label>
+        <input type="text" name="uname">
+        <button>submit</button>
+        <button id="adminbtn"><a href="/user/admin">become admin</a></button>
+    </form>
+    
+</body>
+<script>
+    categoryform.onsubmit = async (e) => {
+        e.preventDefault();
+        const {uname : {value}} = e.target;
+        const {data} = await axios.post('/user/category', {uname : value})
+        console.log(data) 
+    }
+
+ 
+</script>
+</html>
