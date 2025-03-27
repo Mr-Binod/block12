@@ -1,0 +1,24 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if(data) { %>
+        <a href="/logout">logout</a>
+        <a href="/unlink">서비스 연결 종료</a>
+        <div><img src="<%= data.profile_image %>" alt=""><span></span>님 안녕하세요</div>
+
+    <% } %>
+    <a href="/kakao/login">
+        <img src="/img/2d6bea0f4befe4c87c1e45f3ffe22f612b56fd89.jpg" alt="">
+    </a>
+
+    
+</body>
+</html>
