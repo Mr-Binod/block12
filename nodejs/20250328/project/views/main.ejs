@@ -1,0 +1,69 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <% if(data) { %>
+        <a href="/logout">logout</a>
+        <a href="/unlink">서비스 연결 종료</a>
+        <div><img src="<%= data.profile_image %>" alt=""><span></span>님 안녕하세요</div>
+
+    <% } %>
+    <a href="/kakao/login">
+        <img src="/img/2d6bea0f4befe4c87c1e45f3ffe22f612b56fd89.jpg" alt="">
+    </a><br>
+    <a href="/friends">친구 목록 동의</a>
+    <button id="friends_btn">친구 목록 확인</button>
+    <div class="friends-content">
+        
+    </div>
+    <form action="" id="messageform">
+        <label for="">uuid</label>
+        <input type="text" name="uuid">
+        <label for="">내용</label>
+        <input type="text" name="content">
+        <button>카톡 보내기</button>
+    </form>
+</body>
+<script>
+    const friends = async () => {
+        const {data} = await axios.get('/friendsView');
+        const content = document.querySelector('.friends-content');
+        content.innerHTML = '';
+        if(data) {
+
+            data.forEach(el => {
+                const div = document.createElement('div');
+                const span = document.createElement('span');
+                const span1 = document.createElement('span');
+                const span2 = document.createElement('span');
+                div.append(span, span1, span2)
+                span.innerHTML = `친구 이름 : ${el.profile_nickname}`;
+                span1.innerHTML = `<img src=${el.profile_thumbnail_image} />`
+                span2.innerHTML = `uuid : ${el.uuid}`
+                content.append(div);
+                console.log(el)
+            })
+        }
+    }
+    friends_btn.onclick = friends;
+
+    messageform.onsubmit = async (e) => {
+        e.preventDefault()
+        const {uuid : {value : uuidvalue}, content : {value : contentvalue}} = e.target;
+        const data = await axios.post('/friendMessage', {uuid : uuidvalue, content : contentvalue});
+
+        if(data.state === 200) {
+            console.log('메시지 보내기 성공')
+        }
+    }
+</script>
+</html>
