@@ -1,0 +1,75 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #users_wrap {
+            position: fixed;
+            right: 0;
+            top: 0;
+            background-color: rgb(0, 0, 0, 0.3);
+            padding: 3px 6px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>채팅창</div>
+    <div id="chat">
+
+    </div>
+    <div id="user_wrap">
+        유저 아이디
+        <ul>
+
+        </ul>
+    </div>
+    <div>
+        <label for="">chat message</label>
+        <input type="text" id="chatText">
+        <button id="chatSubmit">send</button>
+    </div>
+    <div id="user_nick_name">
+        유저 로그인
+        <label for="">닉네임</label>
+        <input type="text" id="user_nick">
+        <button id="user_nick_btn">로그인</button>
+    </div>
+</body>
+<script>
+    let username = '';
+    // socket 서버 주소와 서버에 요청을 보낼수 있는 메서드 제공
+    // http 요청을 보내소 웹소켓 프로토클로 업그에이드
+    const socket = new WebSocket('ws://localhost:3000');
+    chatSubmit.onclick = (e) => {
+        const {value} = chatText;
+        // send 이건 웹소켓 객체의 메서드
+        // send 이름은 데이터를 보낼때 자주 사용되는 메서드명명
+        socket.send(value)
+    }
+    // SOCKET에 이벤트가 발생한 경우 즉 서버에서 요청 데이터를 보낸 경우
+    socket.addEventListener('message', (event) => {
+        const data = JSON.parse(event.data)
+        console.log(data);
+        const{ type, content} = data;
+        if(type === 'users') {
+            console.log(content)
+            users.innerHTML += `<li>${content}</li>`
+        }
+        // chat.innerHTML += `<div>${data.content}</div>`
+    })
+    user_nick_btn.onclick = () => {
+        if(username === '') {
+            const {value} = user_nick;
+            username = value
+            socket.send(JSON.stringify({type : 'user_login', username : value}))
+            user_nick_name.style.display
+        }
+        socket.send(JSON.stringify({type : 'user_login', username : value}))
+    }
+</script>
+</html>

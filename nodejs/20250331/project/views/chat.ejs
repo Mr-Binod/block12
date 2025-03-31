@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 서버가 호스트 -->
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<style>
+    body {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+    .content {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border: 1px solid;
+    }
+    #login {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        
+    }
+    .center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #chat{
+        display: none;
+    }
+    #send {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border: 1px solid;
+        box-sizing: border-box;
+        display: flex;
+    }
+    #send #msgInput {
+        border: 0;
+        box-sizing: border-box;
+        padding: 3px 6px;
+        width: 80%;
+    }
+
+    #send #sendBtn {
+        background-color: aqua;
+        border: none;
+        box-sizing: border-box;
+        padding: 10px;
+        width: 20%;
+    }
+</style>
+<body>
+    <div class="content center">
+
+        <div id="login" class="center">
+            <h1>로그인</h1>
+            <input type="text" id="username">
+            <button id="loginBtn">접속</button>
+        </div>
+        <div id="chat">
+            <select name="" id="rooms">
+                <option value="room1">room1</option>
+                <option value="room2">room2</option>
+                <option value="room3">room3</option>
+                <option value="room4">room4</option>
+            </select>
+            <ul id="message"></ul>
+            <div id="send">
+                <input type="text" id="msgInput">
+                <button id="sendBtn">보내기</button>
+            </div>
+        </div>
+    </div>
+    <div id="sendwhisper">
+        <label for="">client id</label>
+        <input type="text" id="clientid">
+        <label for="">content</label>
+        <input type="text" id="whispermsg">
+        <button id="whisperbtn">send whisper</button>
+    </div>
+    <div>
+        <ul id="userlist">
+
+        </ul>
+    </div>
+</body>
+<script>
+    // web socket.io 객체
+    // io 객체는 socket.io.js 에서 생성되고
+    // 소켓을 하나 만들었어 이후에는 생성이 되면 안됨.
+    // 상호작용 했을때 연결이 되어야한다. 디자인 패턴 싱슬톤 패턴
+    // 인스턴스가 하나만 생성되어야한다
+    let socket = null;
+    let room = '';
+    let name = '';
+    loginBtn.onclick = (e) => {
+        if(socket) return;
+        socket = io.connect();
+        login.style.display = 'none';
+        chat.style.display = 'block';
+
+        name = username.value;
+        room = rooms.value;
+
+        socket.emit('joinroom', room, name);
+
+        socket.on('whisper', (data) => {
+            console.log('데이터 받았어')
+            console.log(data);
+            alert(data);
+        })
+        socket.on('joinroom', (room, name) => {
+            const li = document.createElement('li');
+            li.classList.add('jointext');
+            li.innerHTML = `${room}에 ${name} 입장했어요`
+            message.append(li);
+        })
+        socket.on('leaveroom', (room, name) => {
+            const li = document.createElement('li')
+            li.classList.add('leavetext');
+            li.innerHTML = `${room} 에서 ${name} 가 나갔어요 ㅠㅠ`
+            message.append(li);
+        })
+        socket.on('chat', (name, msg) => {
+            const li = document.createElement('li')
+            li.classList.add('msgtext');
+            li.innerHTML = `${name} : ${msg}`;
+            message.append(li)
+        })
+        socket.on('userConnect', (users) => {
+            userlist.innerHTML = ''
+            users.forEach(el => {
+                userlist.innerHTML += `${el}, `
+            })
+        })
+    }
+
+    whisperbtn.onclick = () => {
+        const {value : clientidvalue} = clientid;
+        const {value : whispermsgvalue} = whispermsg;
+        if(!socket) return;
+        socket.emit('whisper', {msg : whispermsgvalue, id : clientidvalue})
+    }
+
+    rooms.onchange = (e) => {
+        // console.log(e.target.value)
+        if(!socket) return;
+        socket.emit('leaveroom', room, name);
+        room = e.target.value;
+        socket.emit('joinroom', e.target.value, name)
+    }
+
+    sendBtn.onclick = () => {
+        socket.emit('chat', room, name, msgInput.value)
+        msgInput.value = '';
+    }
+
+
+</script>
+</html>
