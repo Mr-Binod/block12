@@ -49,7 +49,6 @@ io.on('connection', (socket) => {
     // 요청을 보낼때 사용되는 식별자 값
     // 메시지를원하는 클라이언트에세 보낼수 있다.
     // socket.on('message', () => {
-
     // })
     console.log(users);
 

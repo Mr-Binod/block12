@@ -1,0 +1,47 @@
+
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+.loginwrap {
+    width: 100%;
+    min-height: 100vh;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 2;
+}
+
+.loginwrap .loginbtn {
+    padding: 20px 50px;
+    background-color: beige;
+    font-weight: bold ;
+    font-size: 16px;
+    border-radius: 8px;
+
+}
+
+.playerwrap {
+    width: 100%;
+    min-height: 100vh;
+    background-color: gray;
+    /* #333 #555 #666 #888 */
+    position: relative;
+
+}
+
+.player, .otherplayer {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: azure;
+}
+
+.otherplayer { 
+    background-color: violet;
+}

@@ -1,0 +1,22 @@
+
+
+.line {
+    overflow: hidden;
+}
+
+.seat {
+    margin: 3px;
+    float: left;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+}
+
+.enable {
+    background-color: gray;
+}
+
+.disable {
+    background-color: cornflowerblue;
+}
+
