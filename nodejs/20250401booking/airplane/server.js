@@ -30,7 +30,6 @@ app.get('/', (req, res) => {
     res.render('main');
 })
 
-
 const file = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'seats.txt'), 'utf-8'));
 // console.log(file);
 
@@ -65,8 +64,6 @@ io.on('connection', (socket) => {
             seat[y][x] = 1;
             io.sockets.emit('reserve', data);
         }
-
-
         // 변경한 데이터의 정보만 보내서 재요청 x 자원 낭비 줄이고 다른 사용자들에세[ 본인의 예약정도 
     })
 })
