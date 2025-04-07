@@ -35,7 +35,7 @@ app.get('/kakao/login', (req, res) => {
 
 app.get('/auth/kakao/callback', async (req, res) => {
     const {code} = req.query;
-    console.log(code);
+    // console.log(code);
     // 엑세스 토크 요청 왜?
     // 카카오 api 를 호출할때 사용해야한다. 액세스토큰이 즉 api 를 호출할수 있는 권한 허가
 
@@ -56,7 +56,7 @@ app.get('/auth/kakao/callback', async (req, res) => {
             'Content-type' : 'application/x-www-form-urlencoded'
         }
     })
-    console.log(response)
+    // console.log(response)
     const {access_token} = response.data;
     // access_token: '-91p9LiQuvZmpvdfNqeD4vsBgvRQ6lQgAAAAAQoNFN0AAAGV1gU7v9Q0RDl69jWm',
     // 유저 정보 조회
@@ -80,8 +80,10 @@ app.get('/auth/kakao/callback', async (req, res) => {
 
 app.get('/', (req, res) => {
     const {login_access_token} = req.cookies;
+    console.log(req, 'cookie')
     if(login_access_token) {
         const {properties} = jwt.verify(login_access_token, 'jwt_key')
+        console.log(properties, 'proeter')
         res.render('main', {data : properties});
     }
     else {
@@ -90,7 +92,6 @@ app.get('/', (req, res) => {
 })
 app.get('/unlink',async (req, res) => {
     try {
-        
         const access_token = req.cookies.kakao_access_token;
         const data = await axios.post('https://kapi.kakao.com/v1/user/unlink', {} , {
             headers : {
