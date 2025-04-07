@@ -33,7 +33,6 @@ router.post('/signup', async (req, res) => {
     // const data = await 
     console.log(unamevalue, uidvalue, upwvalue)
     const data = await userController.signup(uidvalue, upwvalue, unamevalue)
-    
     res.json(data)
 })
 

@@ -24,8 +24,6 @@ const users = User.init(sequelize)
 const posts = Post.init(sequelize)
 const categories= Category.init(sequelize)
 
-
-
 const db = {
     User : users, 
     Post : posts,
