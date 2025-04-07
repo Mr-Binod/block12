@@ -21,7 +21,6 @@ app.use(cookieParser())
 
 app.get('/kakao/login', (req, res) => {
     const kakaoAuth = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${process.env.KAKAO_CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URL}`
-
     res.redirect(kakaoAuth)
 })
 
@@ -90,7 +89,6 @@ app.get('/', (req, res) => {
 })
 app.get('/unlink',async (req, res) => {
     try {
-        
         const access_token = req.cookies.kakao_access_token;
         const data = await axios.post('https://kapi.kakao.com/v1/user/unlink', {} , {
             headers : {
