@@ -22,7 +22,7 @@ const postController = {
             if(data) {
                 postData = data.Posts.map(el => el.dataValues)
             }
-            console.log(postData)
+            console.log(postData, 'postdata')
             return { state : 200, data : postData }
         } catch (error) {
             console.log(error)

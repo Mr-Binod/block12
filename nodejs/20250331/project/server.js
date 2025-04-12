@@ -54,8 +54,6 @@ io.on('connection', (socket) => {
 
     io.sockets.emit('userConnect', users);
 
-
-
     socket.on('whisper', ({id, msg}) => {
         // 요청을 누구에게 보낼것이냐
         // to('메시지를 받을 주체')
