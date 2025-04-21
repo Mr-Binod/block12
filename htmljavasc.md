@@ -314,3 +314,5 @@ board    require(./server)
 
 -------------------------------------20250324-------
 대규모 : large scale
+다룰때 : handling
+상호작용 : interaction
