@@ -55,8 +55,6 @@ const getSeats = async(seatsName) => {
                     }
                 }
             }else if(el === 2) {
-                
-                
                 seat.classList.add('disable')
             }
             line.append(seat);
