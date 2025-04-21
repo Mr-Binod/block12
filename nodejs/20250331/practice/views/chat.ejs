@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<style>
+    #chat {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    <div>
+        <input type="text" id="uid" required>
+        <button id="login">login</button>
+    </div>
+    <div id="chat">
+        <ul id="message">
+        </ul>
+        <div id="send">
+            <input type="text" id="msginput">
+            <button id="sendbtn">send</button>
+        </div>
+    </div>
+</body>
+<script>
+    let socket = null;
+    let id = '';
+    login.onclick = (e) => {
+        socket = io.connect();
+        id = uid.value.trim('');
+        socket.on('chat', (id, msg) => {
+            const li = document.createElement('li')
+            li.classList.add('jointext');
+            li.innerHTML = `${id} 에 ${msg} `
+            message.append(li)
+        })
+    }
+
+    sendbtn.onclick = (e) => {
+        socket.emit('chat',id, msginput.value)
+        msginput.value = ''
+    }
+</script>
+</html>
