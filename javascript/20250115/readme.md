@@ -46,10 +46,10 @@ class Student {
         // ES6 문법 템픞릿 리터럴
         // 문자열과 변수를 같이 사용하는 경우
         // 코드영역을 문자열안에 표현 할수 있다.
-        
         return `나는 : ${this.name}`;    // 중괄호 안에 자바스크립트를 작성하겠다
     }
 }
+
 const student = new Student(20, "soon", "서울");
 ```
 ### class의 상속

@@ -13,12 +13,6 @@ app.use('/public', express.static(path.join(__dirname, 'public')))
 
 
 
-
-
-
-
-
-
 const server = app.listen(3000, () => {
     console.log('server on~')
 })
